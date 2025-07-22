@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -25,8 +28,16 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
      * Creates new form ASOCIJACIJE
      */
        private Timer timer ;
-    public ASOCIJACIJE() {
+       private String[] resenja;
+       int i = 60;
+       int pCovek = 0,pKompjuter = 0;
+       boolean igraKompjuter = false;
+       boolean igraCovek = true;
+       
+    public ASOCIJACIJE() throws Exception {
         initComponents();
+        
+            getRandomLineFromTheFile("C:\\Users\\PC\\Desktop\\asocijacije.txt");
             timer = new Timer(1000, new ActionListener() { // 5000 is five Second
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,13 +49,13 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
       
        timer.start();
     }
-    int i = 60;
+    
     
    public void countme(){
    
-   i-- ;
+       if(i>0) i-- ;
    
-   jLabel2.setText(String.valueOf(i));
+   tajmer.setText(String.valueOf(i));
    
        this.setSize(1100, 750);
     this.setResizable(false);
@@ -61,35 +72,35 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
-        jButton32 = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        A = new javax.swing.JTextField();
+        a4 = new javax.swing.JButton();
+        a3 = new javax.swing.JButton();
+        a2 = new javax.swing.JButton();
+        a1 = new javax.swing.JButton();
+        B = new javax.swing.JTextField();
+        b4 = new javax.swing.JButton();
+        b3 = new javax.swing.JButton();
+        b2 = new javax.swing.JButton();
+        b1 = new javax.swing.JButton();
+        c4 = new javax.swing.JButton();
+        c3 = new javax.swing.JButton();
+        c1 = new javax.swing.JButton();
+        resenje = new javax.swing.JTextField();
+        c2 = new javax.swing.JButton();
+        d4 = new javax.swing.JButton();
+        d3 = new javax.swing.JButton();
+        d1 = new javax.swing.JButton();
+        D = new javax.swing.JTextField();
+        d2 = new javax.swing.JButton();
+        C = new javax.swing.JTextField();
+        tajmer = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        textField3 = new java.awt.TextField();
-        textField1 = new java.awt.TextField();
+        labelaCovek = new javax.swing.JLabel();
+        labelaKompjuter = new javax.swing.JLabel();
+        poeniKompjuter = new java.awt.TextField();
+        poeniCovek = new java.awt.TextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -102,241 +113,242 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(198, 220, 186));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField5.setBackground(new java.awt.Color(215, 228, 192));
-        jTextField5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(127, 127, 127));
-        jTextField5.setText("A");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        A.setBackground(new java.awt.Color(215, 228, 192));
+        A.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        A.setForeground(new java.awt.Color(127, 127, 127));
+        A.setText("A");
+        A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                AActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 210, 40));
+        jPanel1.add(A, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 210, 40));
 
-        jButton17.setBackground(new java.awt.Color(187, 195, 164));
-        jButton17.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(127, 127, 127));
-        jButton17.setText("a4");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        a4.setBackground(new java.awt.Color(187, 195, 164));
+        a4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        a4.setForeground(new java.awt.Color(127, 127, 127));
+        a4.setText("a4");
+        a4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                a4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 210, 40));
+        jPanel1.add(a4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 210, 40));
 
-        jButton18.setBackground(new java.awt.Color(187, 195, 164));
-        jButton18.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(127, 127, 127));
-        jButton18.setText("a3");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        a3.setBackground(new java.awt.Color(187, 195, 164));
+        a3.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        a3.setForeground(new java.awt.Color(127, 127, 127));
+        a3.setText("a3");
+        a3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                a3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 210, 40));
+        jPanel1.add(a3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 210, 40));
 
-        jButton19.setBackground(new java.awt.Color(187, 195, 164));
-        jButton19.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(127, 127, 127));
-        jButton19.setText("a2");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        a2.setBackground(new java.awt.Color(187, 195, 164));
+        a2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        a2.setForeground(new java.awt.Color(127, 127, 127));
+        a2.setText("a2");
+        a2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                a2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 210, 40));
+        jPanel1.add(a2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 210, 40));
 
-        jButton20.setBackground(new java.awt.Color(187, 195, 164));
-        jButton20.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(127, 127, 127));
-        jButton20.setText("a1");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        a1.setBackground(new java.awt.Color(187, 195, 164));
+        a1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        a1.setForeground(new java.awt.Color(127, 127, 127));
+        a1.setText("a1");
+        a1.setToolTipText("");
+        a1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                a1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 210, 40));
+        jPanel1.add(a1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 210, 40));
 
-        jTextField6.setBackground(new java.awt.Color(215, 228, 192));
-        jTextField6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(127, 127, 127));
-        jTextField6.setText("B");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        B.setBackground(new java.awt.Color(215, 228, 192));
+        B.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        B.setForeground(new java.awt.Color(127, 127, 127));
+        B.setText("B");
+        B.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                BActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 210, 40));
+        jPanel1.add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 210, 40));
 
-        jButton21.setBackground(new java.awt.Color(187, 195, 164));
-        jButton21.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton21.setForeground(new java.awt.Color(127, 127, 127));
-        jButton21.setText("b4");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        b4.setBackground(new java.awt.Color(187, 195, 164));
+        b4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        b4.setForeground(new java.awt.Color(127, 127, 127));
+        b4.setText("b4");
+        b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                b4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 210, 40));
+        jPanel1.add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 210, 40));
 
-        jButton22.setBackground(new java.awt.Color(187, 195, 164));
-        jButton22.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton22.setForeground(new java.awt.Color(127, 127, 127));
-        jButton22.setText("b3");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        b3.setBackground(new java.awt.Color(187, 195, 164));
+        b3.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        b3.setForeground(new java.awt.Color(127, 127, 127));
+        b3.setText("b3");
+        b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                b3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 210, 40));
+        jPanel1.add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 210, 40));
 
-        jButton23.setBackground(new java.awt.Color(187, 195, 164));
-        jButton23.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(127, 127, 127));
-        jButton23.setText("b2");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        b2.setBackground(new java.awt.Color(187, 195, 164));
+        b2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        b2.setForeground(new java.awt.Color(127, 127, 127));
+        b2.setText("b2");
+        b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                b2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 210, 40));
+        jPanel1.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 210, 40));
 
-        jButton24.setBackground(new java.awt.Color(187, 195, 164));
-        jButton24.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(127, 127, 127));
-        jButton24.setText("b1");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        b1.setBackground(new java.awt.Color(187, 195, 164));
+        b1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        b1.setForeground(new java.awt.Color(127, 127, 127));
+        b1.setText("b1");
+        b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                b1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 210, 40));
+        jPanel1.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 210, 40));
 
-        jButton25.setBackground(new java.awt.Color(187, 195, 164));
-        jButton25.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(127, 127, 127));
-        jButton25.setText("c4");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        c4.setBackground(new java.awt.Color(187, 195, 164));
+        c4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        c4.setForeground(new java.awt.Color(127, 127, 127));
+        c4.setText("c4");
+        c4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                c4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 210, 40));
+        jPanel1.add(c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 210, 40));
 
-        jButton26.setBackground(new java.awt.Color(187, 195, 164));
-        jButton26.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton26.setForeground(new java.awt.Color(127, 127, 127));
-        jButton26.setText("c3");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
+        c3.setBackground(new java.awt.Color(187, 195, 164));
+        c3.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        c3.setForeground(new java.awt.Color(127, 127, 127));
+        c3.setText("c3");
+        c3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
+                c3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 210, 40));
+        jPanel1.add(c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 210, 40));
 
-        jButton27.setBackground(new java.awt.Color(187, 195, 164));
-        jButton27.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton27.setForeground(new java.awt.Color(127, 127, 127));
-        jButton27.setText("c1");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        c1.setBackground(new java.awt.Color(187, 195, 164));
+        c1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        c1.setForeground(new java.awt.Color(127, 127, 127));
+        c1.setText("c1");
+        c1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                c1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 210, 40));
+        jPanel1.add(c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 210, 40));
 
-        jTextField7.setBackground(new java.awt.Color(215, 228, 192));
-        jTextField7.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(127, 127, 127));
-        jTextField7.setText("???");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        resenje.setBackground(new java.awt.Color(215, 228, 192));
+        resenje.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        resenje.setForeground(new java.awt.Color(127, 127, 127));
+        resenje.setText("???");
+        resenje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                resenjeActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 940, 60));
+        jPanel1.add(resenje, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 940, 60));
 
-        jButton28.setBackground(new java.awt.Color(187, 195, 164));
-        jButton28.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton28.setForeground(new java.awt.Color(127, 127, 127));
-        jButton28.setText("c2");
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
+        c2.setBackground(new java.awt.Color(187, 195, 164));
+        c2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        c2.setForeground(new java.awt.Color(127, 127, 127));
+        c2.setText("c2");
+        c2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
+                c2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 210, 40));
+        jPanel1.add(c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 210, 40));
 
-        jButton29.setBackground(new java.awt.Color(187, 195, 164));
-        jButton29.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton29.setForeground(new java.awt.Color(127, 127, 127));
-        jButton29.setText("d4");
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
+        d4.setBackground(new java.awt.Color(187, 195, 164));
+        d4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        d4.setForeground(new java.awt.Color(127, 127, 127));
+        d4.setText("d4");
+        d4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
+                d4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 210, 40));
+        jPanel1.add(d4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 210, 40));
 
-        jButton30.setBackground(new java.awt.Color(187, 195, 164));
-        jButton30.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton30.setForeground(new java.awt.Color(127, 127, 127));
-        jButton30.setText("d3");
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        d3.setBackground(new java.awt.Color(187, 195, 164));
+        d3.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        d3.setForeground(new java.awt.Color(127, 127, 127));
+        d3.setText("d3");
+        d3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                d3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 370, 210, 40));
+        jPanel1.add(d3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 370, 210, 40));
 
-        jButton31.setBackground(new java.awt.Color(187, 195, 164));
-        jButton31.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton31.setForeground(new java.awt.Color(127, 127, 127));
-        jButton31.setText("d1");
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
+        d1.setBackground(new java.awt.Color(187, 195, 164));
+        d1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        d1.setForeground(new java.awt.Color(127, 127, 127));
+        d1.setText("d1");
+        d1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
+                d1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 210, 40));
+        jPanel1.add(d1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 210, 40));
 
-        jTextField8.setBackground(new java.awt.Color(215, 228, 192));
-        jTextField8.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(127, 127, 127));
-        jTextField8.setText("D");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        D.setBackground(new java.awt.Color(215, 228, 192));
+        D.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        D.setForeground(new java.awt.Color(127, 127, 127));
+        D.setText("D");
+        D.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                DActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 210, 40));
+        jPanel1.add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 210, 40));
 
-        jButton32.setBackground(new java.awt.Color(187, 195, 164));
-        jButton32.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jButton32.setForeground(new java.awt.Color(127, 127, 127));
-        jButton32.setText("d2");
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
+        d2.setBackground(new java.awt.Color(187, 195, 164));
+        d2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        d2.setForeground(new java.awt.Color(127, 127, 127));
+        d2.setText("d2");
+        d2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
+                d2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 320, 210, 40));
+        jPanel1.add(d2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 320, 210, 40));
 
-        jTextField9.setBackground(new java.awt.Color(215, 228, 192));
-        jTextField9.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(127, 127, 127));
-        jTextField9.setText("C");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        C.setBackground(new java.awt.Color(215, 228, 192));
+        C.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        C.setForeground(new java.awt.Color(127, 127, 127));
+        C.setText("C");
+        C.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                CActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 210, 40));
+        jPanel1.add(C, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 210, 40));
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(215, 228, 192));
-        jLabel2.setText("0");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, -1));
+        tajmer.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
+        tajmer.setForeground(new java.awt.Color(215, 228, 192));
+        tajmer.setText("0");
+        jPanel1.add(tajmer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, -1));
 
         jButton12.setBackground(new java.awt.Color(215, 228, 192));
         jButton12.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
@@ -371,25 +383,25 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
         });
         jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, 60, 60));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(215, 228, 192));
-        jLabel1.setText("ČOVEK");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 60, -1, -1));
+        labelaCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        labelaCovek.setForeground(new java.awt.Color(215, 228, 192));
+        labelaCovek.setText("ČOVEK");
+        jPanel1.add(labelaCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 60, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(215, 228, 192));
-        jLabel5.setText("KOMPJUTER");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+        labelaKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        labelaKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        labelaKompjuter.setText("KOMPJUTER");
+        jPanel1.add(labelaKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
 
-        textField3.setBackground(new java.awt.Color(187, 195, 164));
-        textField3.setEditable(false);
-        textField3.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jPanel1.add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 80, 40));
+        poeniKompjuter.setBackground(new java.awt.Color(187, 195, 164));
+        poeniKompjuter.setEditable(false);
+        poeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        jPanel1.add(poeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 80, 40));
 
-        textField1.setBackground(new java.awt.Color(187, 195, 164));
-        textField1.setEditable(false);
-        textField1.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jPanel1.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 80, 40));
+        poeniCovek.setBackground(new java.awt.Color(187, 195, 164));
+        poeniCovek.setEditable(false);
+        poeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        jPanel1.add(poeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 80, 40));
 
         jLabel3.setBackground(new java.awt.Color(198, 220, 186));
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 80)); // NOI18N
@@ -414,89 +426,107 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1ActionPerformed
      playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+     a1.setText(resenja[0]);
 
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_a1ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    a2.setText(resenja[1]);
 
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_a2ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a3ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    a3.setText(resenja[2]);
 
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_a3ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void a4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a4ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    a4.setText(resenja[3]);
 
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_a4ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    b4.setText(resenja[8]);
+    }//GEN-LAST:event_b4ActionPerformed
 
-    }//GEN-LAST:event_jButton21ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    b3.setText(resenja[7]);
+    }//GEN-LAST:event_b3ActionPerformed
 
-    }//GEN-LAST:event_jButton22ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
      playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    b2.setText(resenja[6]);
+    
+    }//GEN-LAST:event_b2ActionPerformed
 
-    }//GEN-LAST:event_jButton23ActionPerformed
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav"); 
+     b1.setText(resenja[5]); 
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    }//GEN-LAST:event_b1ActionPerformed
 
-    }//GEN-LAST:event_jButton24ActionPerformed
-
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void c4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c4ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    c4.setText(resenja[13]);
 
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_c4ActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+    private void c3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c3ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    c3.setText(resenja[12]);
 
-    }//GEN-LAST:event_jButton26ActionPerformed
+    }//GEN-LAST:event_c3ActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    private void c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c1ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    c1.setText(resenja[10]); 
+        
+        
+        
+        
 
-    }//GEN-LAST:event_jButton27ActionPerformed
+    }//GEN-LAST:event_c1ActionPerformed
 
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+    private void c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c2ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    c2.setText(resenja[11]);
 
-    }//GEN-LAST:event_jButton28ActionPerformed
+    }//GEN-LAST:event_c2ActionPerformed
 
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+    private void d4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d4ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\win2.wav");
-        rezultat re1 = new rezultat();
-        re1.show();
-        dispose();
-    }//GEN-LAST:event_jButton29ActionPerformed
+    d4.setText(resenja[18]);
+       // rezultat re1 = new rezultat();
+       // re1.show();
+       // dispose();
+    }//GEN-LAST:event_d4ActionPerformed
 
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+    private void d3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d3ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\izgub.wav");
-        rezultat re1 = new rezultat();
-        re1.show();
-        dispose();
-    }//GEN-LAST:event_jButton30ActionPerformed
+    d3.setText(resenja[17]);
+        //rezultat re1 = new rezultat();
+        //re1.show();
+        //dispose();
+    }//GEN-LAST:event_d3ActionPerformed
 
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+    private void d1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d1ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    d1.setText(resenja[15]); 
 
-    }//GEN-LAST:event_jButton31ActionPerformed
+    }//GEN-LAST:event_d1ActionPerformed
 
-    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+    private void d2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d2ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    d2.setText(resenja[16]);
 
-    }//GEN-LAST:event_jButton32ActionPerformed
+    }//GEN-LAST:event_d2ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
 playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
@@ -517,30 +547,123 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
 
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    if(A.getText().equalsIgnoreCase(resenja[4]) && igraKompjuter == false && igraCovek == true)
+    {
+        a1.setText(resenja[0]);  // ako ovo odma postavi onda samo stavis details da je this details =.. tj kao property pa on click update..
+        a2.setText(resenja[1]);
+        a3.setText(resenja[2]);
+        a4.setText(resenja[3]);
+     
+        A.setText(resenja[4]);
+        pCovek += 10;
+        poeniCovek.setText(String.valueOf(pCovek));
+        //igraCovek = false;
+    }
+    else if(A.getText().equalsIgnoreCase(resenja[4]) && igraKompjuter == true && igraCovek == false)
+    {
+        A.setText(resenja[4]);
+        pKompjuter += 10;
+        poeniKompjuter.setText(String.valueOf(pKompjuter));
+    }
 
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_AActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+     if(B.getText().equalsIgnoreCase(resenja[9]))
+    {
+        b1.setText(resenja[5]); 
+        b2.setText(resenja[6]);
+        b3.setText(resenja[7]);
+        b4.setText(resenja[8]);
+         B.setText(resenja[9]);
+        //poeniCovek.setText(Integer.toString(Integer.parseInt(poeniCovek.getText())+10));
+        //int skor = Integer.parseInt(poeniCovek.getText())+10;
+        //String s = String.valueOf(skor);
+        pCovek += 10;
+        poeniCovek.setText(String.valueOf(pCovek));
+    }
+   
 
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_BActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+         if(C.getText().equalsIgnoreCase(resenja[14]))
+    {
+        c1.setText(resenja[10]); 
+        c2.setText(resenja[11]);
+        c3.setText(resenja[12]);
+        c4.setText(resenja[13]);
+         C.setText(resenja[14]);
+        //poeniCovek.setText(Integer.toString(Integer.parseInt(poeniCovek.getText())+10));
+        //int skor = Integer.parseInt(poeniCovek.getText())+10;
+        //String s = String.valueOf(skor);
+        pCovek += 10;
+        poeniCovek.setText(String.valueOf(pCovek));
+    }
+    
 
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_CActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    if(D.getText().equalsIgnoreCase(resenja[19]))
+    {
+        d1.setText(resenja[15]); 
+        d2.setText(resenja[16]);
+        d3.setText(resenja[17]);
+        d4.setText(resenja[18]);
+         D.setText(resenja[19]);
+        //poeniCovek.setText(Integer.toString(Integer.parseInt(poeniCovek.getText())+10));
+        //int skor = Integer.parseInt(poeniCovek.getText())+10;
+        //String s = String.valueOf(skor);
+        pCovek += 10;
+        poeniCovek.setText(String.valueOf(pCovek));
+    }
 
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_DActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void resenjeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resenjeActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    if(resenje.getText().equalsIgnoreCase(resenja[20]))
+    {
+        a1.setText(resenja[0]);  // ako ovo odma postavi onda samo stavis details da je this details =.. tj kao property pa on click update..
+        a2.setText(resenja[1]);
+        a3.setText(resenja[2]);
+        a4.setText(resenja[3]);
+        A.setText(resenja[4]);
+        
+        b1.setText(resenja[5]); 
+        b2.setText(resenja[6]);
+        b3.setText(resenja[7]);
+        b4.setText(resenja[8]);
+        B.setText(resenja[9]);
+        
+        c1.setText(resenja[10]); 
+        c2.setText(resenja[11]);
+        c3.setText(resenja[12]);
+        c4.setText(resenja[13]);
+        C.setText(resenja[14]);
+        
+        d1.setText(resenja[15]); 
+        d2.setText(resenja[16]);
+        d3.setText(resenja[17]);
+        d4.setText(resenja[18]);
+        D.setText(resenja[19]);
+        
+         resenje.setText(resenja[20]);
+        //poeniCovek.setText(Integer.toString(Integer.parseInt(poeniCovek.getText())+10));
+        //int skor = Integer.parseInt(poeniCovek.getText())+10;
+        //String s = String.valueOf(skor);
+        pCovek += 10;
+        poeniCovek.setText(String.valueOf(pCovek));
+    }
+    
 
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_resenjeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -572,7 +695,11 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ASOCIJACIJE().setVisible(true);
+                try {
+                    new ASOCIJACIJE().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(ASOCIJACIJE.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -587,41 +714,82 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         e.printStackTrace();
     }
 }
+        private void getRandomLineFromTheFile(String filePathWithFileName) throws Exception {
+        File file = new File(filePathWithFileName); 
+        final RandomAccessFile f = new RandomAccessFile(file, "r");
+        final long randomLocation = (long) (Math.random() * f.length());
+        f.seek(randomLocation);
+        f.readLine(); //will move file pointer to the next line
+        String randomLine = new String(f.readLine().getBytes("ISO-8859-1"), "UTF-8");
+        //String utf8 = new String(randomLine.getBytes("ISO-8859-1"), "UTF-8");
+        String[] details = randomLine.split("\t");
+         f.close();
+         resenja = details;
+         /*
+        
+        a1.setText(details[0]);  // ako ovo odma postavi onda samo stavis details da je this details =.. tj kao property pa on click update..
+        a2.setText(details[1]);
+        a3.setText(details[2]);
+        a4.setText(details[3]);
+        A.setText(details[4]);
+        
+        b1.setText(details[5]); 
+        b2.setText(details[6]);
+        b3.setText(details[7]);
+        b4.setText(details[8]);
+        B.setText(details[9]);
+        
+        c1.setText(details[10]); 
+        c2.setText(details[11]);
+        c3.setText(details[12]);
+        c4.setText(details[13]);
+        C.setText(details[14]);
+        
+        d1.setText(details[15]); 
+        d2.setText(details[16]);
+        d3.setText(details[17]);
+        d4.setText(details[18]);
+        D.setText(details[19]);
+        
+        resenje.setText(details[20]);*/
+       
+        //return randomLine;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField A;
+    private javax.swing.JTextField B;
+    private javax.swing.JTextField C;
+    private javax.swing.JTextField D;
+    private javax.swing.JButton a1;
+    private javax.swing.JButton a2;
+    private javax.swing.JButton a3;
+    private javax.swing.JButton a4;
+    private javax.swing.JButton b1;
+    private javax.swing.JButton b2;
+    private javax.swing.JButton b3;
+    private javax.swing.JButton b4;
+    private javax.swing.JButton c1;
+    private javax.swing.JButton c2;
+    private javax.swing.JButton c3;
+    private javax.swing.JButton c4;
+    private javax.swing.JButton d1;
+    private javax.swing.JButton d2;
+    private javax.swing.JButton d3;
+    private javax.swing.JButton d4;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField3;
+    private javax.swing.JLabel labelaCovek;
+    private javax.swing.JLabel labelaKompjuter;
+    private java.awt.TextField poeniCovek;
+    private java.awt.TextField poeniKompjuter;
+    private javax.swing.JTextField resenje;
+    private javax.swing.JLabel tajmer;
     // End of variables declaration//GEN-END:variables
 }

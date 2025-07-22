@@ -1,13 +1,17 @@
+package redjalica2;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package redjalica2;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -25,6 +29,13 @@ public class skocko extends javax.swing.JFrame {
      * Creates new form skocko
      */
      private Timer timer ;
+     int brojac = 1; //do 24
+    //public static String[] elementi = {"sivo","ljubicasto","zeleno","plavo","crveno","narandzasto"};
+    //public static String[] varijacije = new String[4];
+    //public static List<String> rezultat = new ArrayList<>();
+    //int[] rez = new int[4];
+     ArrayList<Integer> rez = new ArrayList<Integer>(4);
+
     public skocko() {
         initComponents();
             timer = new Timer(1000, new ActionListener() { // 5000 is five Second
@@ -33,12 +44,47 @@ public class skocko extends javax.swing.JFrame {
               //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
            
             countme();
+            //varijacije();
+            rez.add(0, ThreadLocalRandom.current().nextInt(1, 6 + 1)); //prvi broj 1 - sivo, 2- ljubicasto, 3- zeleno, 4-plavo, 5-crveno, 6 - narandzasto
+            rez.add(1, ThreadLocalRandom.current().nextInt(1, 6 + 1));
+            rez.add(2, ThreadLocalRandom.current().nextInt(1, 6 + 1));
+            rez.add(3, ThreadLocalRandom.current().nextInt(1, 6 + 1));
+            tacno.setVisible(false);
+            netacno.setVisible(false);
+            nijeNaMestu.setVisible(false);
             }
         });
       
        timer.start();
     }
     int i = 60;
+    
+    
+    /*private void varijacije()
+   {
+    
+    permutiraj(0);
+    
+    final int indeks = (int) (Math.random() * rezultat.size());
+    rezultat.indexOf(indeks);
+    System.out.println(rezultat);
+
+
+
+   }
+
+   private static void permutiraj(int index) {
+if (index >= varijacije.length) {
+            rezultat.add(String.join(" ", varijacije));
+        } else {
+            for (int j = 0; j < elementi.length; j++) {
+                varijacije[index] = elementi[j];
+                permutiraj(index + 1);
+            }
+        }
+    }
+    */
+    
     
    public void countme(){
    
@@ -51,6 +97,7 @@ public class skocko extends javax.swing.JFrame {
    
    }
     
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,69 +112,72 @@ public class skocko extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        plavo = new javax.swing.JButton();
+        crveno = new javax.swing.JButton();
+        ljubicasto = new javax.swing.JButton();
+        zeleno = new javax.swing.JButton();
+        sivo = new javax.swing.JButton();
+        narandzasto = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
+        pokusaj11 = new javax.swing.JButton();
+        pokusaj13 = new javax.swing.JButton();
+        pokusaj14 = new javax.swing.JButton();
+        pokusaj12 = new javax.swing.JButton();
+        pokusaj22 = new javax.swing.JButton();
+        pokusaj23 = new javax.swing.JButton();
+        pokusaj24 = new javax.swing.JButton();
+        pokusaj21 = new javax.swing.JButton();
+        pokusaj32 = new javax.swing.JButton();
+        pokusaj33 = new javax.swing.JButton();
+        pokusaj34 = new javax.swing.JButton();
+        pokusaj31 = new javax.swing.JButton();
+        pokusaj42 = new javax.swing.JButton();
+        pokusaj43 = new javax.swing.JButton();
+        pokusaj44 = new javax.swing.JButton();
+        pokusaj41 = new javax.swing.JButton();
+        pokusaj52 = new javax.swing.JButton();
+        pokusaj53 = new javax.swing.JButton();
+        pokusaj54 = new javax.swing.JButton();
+        pokusaj51 = new javax.swing.JButton();
+        pokusaj62 = new javax.swing.JButton();
+        pokusaj63 = new javax.swing.JButton();
+        pokusaj64 = new javax.swing.JButton();
+        pokusaj61 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         textField3 = new java.awt.TextField();
         textField1 = new java.awt.TextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        stanje23 = new javax.swing.JLabel();
+        stanje24 = new javax.swing.JLabel();
+        stanje22 = new javax.swing.JLabel();
+        stanje11 = new javax.swing.JLabel();
+        stanje21 = new javax.swing.JLabel();
+        stanje13 = new javax.swing.JLabel();
+        stanje41 = new javax.swing.JLabel();
+        stanje42 = new javax.swing.JLabel();
+        stanje43 = new javax.swing.JLabel();
+        stanje44 = new javax.swing.JLabel();
+        stanje54 = new javax.swing.JLabel();
+        stanje53 = new javax.swing.JLabel();
+        stanje52 = new javax.swing.JLabel();
+        stanje51 = new javax.swing.JLabel();
+        stanje61 = new javax.swing.JLabel();
+        stanje62 = new javax.swing.JLabel();
+        stanje63 = new javax.swing.JLabel();
+        stanje64 = new javax.swing.JLabel();
+        stanje14 = new javax.swing.JLabel();
+        stanje12 = new javax.swing.JLabel();
+        stanje33 = new javax.swing.JLabel();
+        stanje34 = new javax.swing.JLabel();
+        stanje32 = new javax.swing.JLabel();
+        stanje31 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        nijeNaMestu = new javax.swing.JLabel();
+        tacno = new javax.swing.JLabel();
+        netacno = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -163,59 +213,59 @@ public class skocko extends javax.swing.JFrame {
         });
         jPanel50.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, 60, 60));
 
-        jButton2.setBackground(new java.awt.Color(215, 228, 192));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        plavo.setBackground(new java.awt.Color(215, 228, 192));
+        plavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
+        plavo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                plavoActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 50, 50));
+        jPanel50.add(plavo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 50, 50));
 
-        jButton3.setBackground(new java.awt.Color(215, 228, 192));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        crveno.setBackground(new java.awt.Color(215, 228, 192));
+        crveno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
+        crveno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                crvenoActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, 50, 50));
+        jPanel50.add(crveno, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, 50, 50));
 
-        jButton5.setBackground(new java.awt.Color(215, 228, 192));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ljubicasto.setBackground(new java.awt.Color(215, 228, 192));
+        ljubicasto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
+        ljubicasto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ljubicastoActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 50, 50));
+        jPanel50.add(ljubicasto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 50, 50));
 
-        jButton6.setBackground(new java.awt.Color(215, 228, 192));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        zeleno.setBackground(new java.awt.Color(215, 228, 192));
+        zeleno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
+        zeleno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                zelenoActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 50, 50));
+        jPanel50.add(zeleno, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 50, 50));
 
-        jButton7.setBackground(new java.awt.Color(215, 228, 192));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        sivo.setBackground(new java.awt.Color(215, 228, 192));
+        sivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
+        sivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                sivoActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 260, 50, 50));
+        jPanel50.add(sivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 260, 50, 50));
 
-        jButton8.setBackground(new java.awt.Color(215, 228, 192));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        narandzasto.setBackground(new java.awt.Color(215, 228, 192));
+        narandzasto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
+        narandzasto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                narandzastoActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 560, 50, 50));
+        jPanel50.add(narandzasto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 560, 50, 50));
 
         jButton9.setBackground(new java.awt.Color(215, 228, 192));
         jButton9.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
@@ -228,221 +278,241 @@ public class skocko extends javax.swing.JFrame {
         });
         jPanel50.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, 60, 60));
 
-        jButton31.setBackground(new java.awt.Color(187, 195, 164));
-        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
+        pokusaj11.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
+        pokusaj11.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                pokusaj11StateChanged(evt);
             }
         });
-        jPanel50.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 50, 50));
+        pokusaj11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pokusaj11ActionPerformed(evt);
+            }
+        });
+        jPanel50.add(pokusaj11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 50, 50));
 
-        jButton34.setBackground(new java.awt.Color(187, 195, 164));
-        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
-        jButton34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton34ActionPerformed(evt);
+        pokusaj13.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
+        pokusaj13.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                pokusaj13StateChanged(evt);
             }
         });
-        jPanel50.add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 50, 50));
+        pokusaj13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pokusaj13ActionPerformed(evt);
+            }
+        });
+        jPanel50.add(pokusaj13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 50, 50));
 
-        jButton35.setBackground(new java.awt.Color(187, 195, 164));
-        jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
-        jButton35.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj14.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
+        pokusaj14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton35ActionPerformed(evt);
+                pokusaj14ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 50, 50));
+        pokusaj14.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                pokusaj14PropertyChange(evt);
+            }
+        });
+        jPanel50.add(pokusaj14, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 50, 50));
 
-        jButton36.setBackground(new java.awt.Color(187, 195, 164));
-        jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
-        jButton36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton36ActionPerformed(evt);
+        pokusaj12.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja6-removebg-preview.png"))); // NOI18N
+        pokusaj12.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                pokusaj12StateChanged(evt);
             }
         });
-        jPanel50.add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 50, 50));
+        pokusaj12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pokusaj12ActionPerformed(evt);
+            }
+        });
+        jPanel50.add(pokusaj12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 50, 50));
 
-        jButton30.setBackground(new java.awt.Color(187, 195, 164));
-        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj22.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
+        pokusaj22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                pokusaj22ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 50, 50));
+        jPanel50.add(pokusaj22, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 50, 50));
 
-        jButton32.setBackground(new java.awt.Color(187, 195, 164));
-        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj23.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
+        pokusaj23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
+                pokusaj23ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 50, 50));
+        jPanel50.add(pokusaj23, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 50, 50));
 
-        jButton33.setBackground(new java.awt.Color(187, 195, 164));
-        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
-        jButton33.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj24.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
+        pokusaj24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton33ActionPerformed(evt);
+                pokusaj24ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 50, 50));
+        jPanel50.add(pokusaj24, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 50, 50));
 
-        jButton37.setBackground(new java.awt.Color(187, 195, 164));
-        jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
-        jButton37.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj21.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/BOJA4-removebg-preview.png"))); // NOI18N
+        pokusaj21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton37ActionPerformed(evt);
+                pokusaj21ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 50, 50));
+        jPanel50.add(pokusaj21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 50, 50));
 
-        jButton38.setBackground(new java.awt.Color(187, 195, 164));
-        jButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
-        jButton38.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj32.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
+        pokusaj32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton38ActionPerformed(evt);
+                pokusaj32ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 50, 50));
+        jPanel50.add(pokusaj32, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 50, 50));
 
-        jButton39.setBackground(new java.awt.Color(187, 195, 164));
-        jButton39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
-        jButton39.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj33.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
+        pokusaj33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton39ActionPerformed(evt);
+                pokusaj33ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 50, 50));
+        jPanel50.add(pokusaj33, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 50, 50));
 
-        jButton40.setBackground(new java.awt.Color(187, 195, 164));
-        jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
-        jButton40.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj34.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
+        pokusaj34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton40ActionPerformed(evt);
+                pokusaj34ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 50, 50));
+        jPanel50.add(pokusaj34, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 50, 50));
 
-        jButton41.setBackground(new java.awt.Color(187, 195, 164));
-        jButton41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
-        jButton41.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj31.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/bojA3-removebg-preview.png"))); // NOI18N
+        pokusaj31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton41ActionPerformed(evt);
+                pokusaj31ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 50, 50));
+        jPanel50.add(pokusaj31, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 50, 50));
 
-        jButton10.setBackground(new java.awt.Color(187, 195, 164));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj42.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
+        pokusaj42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                pokusaj42ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 50, 50));
+        jPanel50.add(pokusaj42, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 50, 50));
 
-        jButton11.setBackground(new java.awt.Color(187, 195, 164));
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj43.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
+        pokusaj43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                pokusaj43ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, 50, 50));
+        jPanel50.add(pokusaj43, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, 50, 50));
 
-        jButton13.setBackground(new java.awt.Color(187, 195, 164));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj44.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
+        pokusaj44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                pokusaj44ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 50, 50));
+        jPanel50.add(pokusaj44, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 50, 50));
 
-        jButton14.setBackground(new java.awt.Color(187, 195, 164));
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj41.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja2-removebg-preview.png"))); // NOI18N
+        pokusaj41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                pokusaj41ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 50, 50));
+        jPanel50.add(pokusaj41, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 50, 50));
 
-        jButton15.setBackground(new java.awt.Color(187, 195, 164));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj52.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
+        pokusaj52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                pokusaj52ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 50, 50));
+        jPanel50.add(pokusaj52, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 50, 50));
 
-        jButton16.setBackground(new java.awt.Color(187, 195, 164));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj53.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
+        pokusaj53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                pokusaj53ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 50, 50));
+        jPanel50.add(pokusaj53, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 50, 50));
 
-        jButton17.setBackground(new java.awt.Color(187, 195, 164));
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj54.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
+        pokusaj54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                pokusaj54ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 50, 50));
+        jPanel50.add(pokusaj54, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 50, 50));
 
-        jButton18.setBackground(new java.awt.Color(187, 195, 164));
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj51.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja1-Photoroom.png"))); // NOI18N
+        pokusaj51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                pokusaj51ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 50, 50));
+        jPanel50.add(pokusaj51, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 50, 50));
 
-        jButton19.setBackground(new java.awt.Color(187, 195, 164));
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj62.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
+        pokusaj62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                pokusaj62ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 560, 50, 50));
+        jPanel50.add(pokusaj62, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 560, 50, 50));
 
-        jButton20.setBackground(new java.awt.Color(187, 195, 164));
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj63.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
+        pokusaj63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                pokusaj63ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 50, 50));
+        jPanel50.add(pokusaj63, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 50, 50));
 
-        jButton21.setBackground(new java.awt.Color(187, 195, 164));
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj64.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
+        pokusaj64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                pokusaj64ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 50, 50));
+        jPanel50.add(pokusaj64, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 50, 50));
 
-        jButton22.setBackground(new java.awt.Color(187, 195, 164));
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        pokusaj61.setBackground(new java.awt.Color(187, 195, 164));
+        pokusaj61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/boja5-removebg-preview.png"))); // NOI18N
+        pokusaj61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                pokusaj61ActionPerformed(evt);
             }
         });
-        jPanel50.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 560, 50, 50));
+        jPanel50.add(pokusaj61, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 560, 50, 50));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(215, 228, 192));
@@ -464,77 +534,77 @@ public class skocko extends javax.swing.JFrame {
         textField1.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jPanel50.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 80, 40));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, -1, 30));
+        stanje23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje23, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, -1, 30));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, 30));
+        stanje24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje24, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, 30));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, -1, 30));
+        stanje22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje22, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, -1, 30));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, 30));
+        stanje11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, 30));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, 30));
+        stanje21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, 30));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, -1, 30));
+        stanje13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, -1, 30));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, 30));
+        stanje41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje41, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, 30));
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, -1, 30));
+        stanje42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje42, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, -1, 30));
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, -1, 30));
+        stanje43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje43, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, -1, 30));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, -1, 30));
+        stanje44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje44, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, -1, 30));
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, -1, 30));
+        stanje54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje54, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, -1, 30));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, -1, 30));
+        stanje53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje53, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, -1, 30));
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, 30));
+        stanje52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje52, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, 30));
 
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, -1, 30));
+        stanje51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje51, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, -1, 30));
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 30, 30));
+        stanje61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje61, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 30, 30));
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, 30, 30));
+        stanje62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje62, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, 30, 30));
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 30, 30));
+        stanje63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje63, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 30, 30));
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 30, 30));
+        stanje64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje64, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 30, 30));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, -1, 30));
+        stanje14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje14, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, -1, 30));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, 30));
+        stanje12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje12, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, 30));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 30, 30));
+        stanje33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje33, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 30, 30));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 30, 30));
+        stanje34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje34, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 30, 30));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 30, 30));
+        stanje32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 30, 30));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
-        jPanel50.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 30, 30));
+        stanje31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(stanje31, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 30, 30));
 
         jLabel3.setBackground(new java.awt.Color(198, 220, 186));
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 80)); // NOI18N
@@ -554,6 +624,15 @@ public class skocko extends javax.swing.JFrame {
         jLabel6.setText("jLabel2");
         jPanel50.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1100, 770));
 
+        nijeNaMestu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/nijenamestu-removebg-preview.png"))); // NOI18N
+        jPanel50.add(nijeNaMestu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, 30));
+
+        tacno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/tacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(tacno, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, 30));
+
+        netacno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/redjalica/slike/netacno-removebg-preview.png"))); // NOI18N
+        jPanel50.add(netacno, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 30, 30));
+
         getContentPane().add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 750));
 
         pack();
@@ -567,146 +646,351 @@ public class skocko extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
    playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void crvenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crvenoActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+        switch (brojac) {
+             case 1 -> {pokusaj11.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje11.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje11.setIcon(nijeNaMestu.getIcon());} else{stanje11.setIcon(netacno.getIcon());} brojac++; break;} //ovo ne valja
+             case 2 -> {pokusaj12.setIcon(crveno.getIcon());  if(rez.get(1) == 5) {stanje12.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje12.setIcon(nijeNaMestu.getIcon());} else{stanje12.setIcon(netacno.getIcon());} brojac++; break;}
+             case 3 -> {pokusaj13.setIcon(crveno.getIcon()); if(rez.get(2) == 5) {stanje13.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje13.setIcon(nijeNaMestu.getIcon());} else{stanje13.setIcon(netacno.getIcon());} brojac++; break;}
+             case 4 -> {pokusaj14.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; break;}
+             case 5 -> {pokusaj21.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
+             case 6 -> {pokusaj22.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
+             case 7 -> {pokusaj23.setIcon(crveno.getIcon()); if(rez.get(2) == 5) {stanje23.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje23.setIcon(nijeNaMestu.getIcon());} else{stanje23.setIcon(netacno.getIcon());} brojac++; break;}
+             case 8 -> {pokusaj24.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; break;}
+             case 9 -> {pokusaj31.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
+             case 10 -> {pokusaj32.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
+             case 11 -> {pokusaj33.setIcon(crveno.getIcon()); if(rez.get(2) == 5) {stanje33.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje33.setIcon(nijeNaMestu.getIcon());} else{stanje33.setIcon(netacno.getIcon());} brojac++; break;}
+             case 12 -> {pokusaj34.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; break;}
+             case 13 -> {pokusaj41.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
+             case 14 ->{pokusaj42.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
+             case 15 -> {pokusaj43.setIcon(crveno.getIcon()); if(rez.get(2) == 5) {stanje43.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje43.setIcon(nijeNaMestu.getIcon());} else{stanje43.setIcon(netacno.getIcon());} brojac++; break;}
+             case 16 -> {pokusaj44.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; break;}
+             case 17 -> {pokusaj51.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
+             case 18 -> {pokusaj52.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
+             case 19 -> {pokusaj53.setIcon(crveno.getIcon()); if(rez.get(2) == 5) {stanje53.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje53.setIcon(nijeNaMestu.getIcon());} else{stanje53.setIcon(netacno.getIcon());} brojac++; break;}
+             case 20 -> {pokusaj54.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; break;}
+             case 21 -> {pokusaj61.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
+             case 22 -> {pokusaj62.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
+             case 23 -> {pokusaj63.setIcon(crveno.getIcon()); if(rez.get(2) == 5) {stanje63.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje63.setIcon(nijeNaMestu.getIcon());} else{stanje63.setIcon(netacno.getIcon());} brojac++; break;}
+             case 24 -> {pokusaj64.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; break;}
+             
+             default -> {
+             }
+         }
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_crvenoActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
        playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+       //Icon ikona = new Icon()
+       stanje31.setIcon(stanje13.getIcon());
 
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void narandzastoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_narandzastoActionPerformed
 playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
-
+switch (brojac) {
+             case 1 -> {pokusaj11.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje11.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje11.setIcon(nijeNaMestu.getIcon());} else{stanje11.setIcon(netacno.getIcon());} brojac++; break;} //ovo ne valja
+             case 2 -> {pokusaj12.setIcon(narandzasto.getIcon());  if(rez.get(1) == 6) {stanje12.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje12.setIcon(nijeNaMestu.getIcon());} else{stanje12.setIcon(netacno.getIcon());} brojac++; break;}
+             case 3 -> {pokusaj13.setIcon(narandzasto.getIcon()); if(rez.get(2) == 6) {stanje13.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje13.setIcon(nijeNaMestu.getIcon());} else{stanje13.setIcon(netacno.getIcon());} brojac++; break;}
+             case 4 -> {pokusaj14.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; break;}
+             case 5 -> {pokusaj21.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
+             case 6 -> {pokusaj22.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
+             case 7 -> {pokusaj23.setIcon(narandzasto.getIcon()); if(rez.get(2) == 6) {stanje23.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje23.setIcon(nijeNaMestu.getIcon());} else{stanje23.setIcon(netacno.getIcon());} brojac++; break;}
+             case 8 -> {pokusaj24.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; break;}
+             case 9 -> {pokusaj31.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
+             case 10 -> {pokusaj32.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
+             case 11 -> {pokusaj33.setIcon(narandzasto.getIcon()); if(rez.get(2) == 6) {stanje33.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje33.setIcon(nijeNaMestu.getIcon());} else{stanje33.setIcon(netacno.getIcon());} brojac++; break;}
+             case 12 -> {pokusaj34.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; break;}
+             case 13 -> {pokusaj41.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
+             case 14 ->{pokusaj42.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
+             case 15 -> {pokusaj43.setIcon(narandzasto.getIcon()); if(rez.get(2) == 6) {stanje43.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje43.setIcon(nijeNaMestu.getIcon());} else{stanje43.setIcon(netacno.getIcon());} brojac++; break;}
+             case 16 -> {pokusaj44.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; break;}
+             case 17 -> {pokusaj51.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
+             case 18 -> {pokusaj52.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
+             case 19 -> {pokusaj53.setIcon(narandzasto.getIcon()); if(rez.get(2) == 6) {stanje53.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje53.setIcon(nijeNaMestu.getIcon());} else{stanje53.setIcon(netacno.getIcon());} brojac++; break;}
+             case 20 -> {pokusaj54.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; break;}
+             case 21 -> {pokusaj61.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
+             case 22 -> {pokusaj62.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
+             case 23 -> {pokusaj63.setIcon(narandzasto.getIcon()); if(rez.get(2) == 6) {stanje63.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje63.setIcon(nijeNaMestu.getIcon());} else{stanje63.setIcon(netacno.getIcon());} brojac++; break;}
+             case 24 -> {pokusaj64.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; break;}
+             
+             default -> {
+             }
+         }
+//ovaj kod ne ide tu
         KOZNAZNA k1 = new KOZNAZNA();
     k1.show();
     dispose();
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_narandzastoActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void sivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sivoActionPerformed
         playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+          switch (brojac) {
+             case 1 -> {pokusaj11.setIcon(sivo.getIcon()); if(rez.get(0) == 1 && pokusaj11.getIcon().equals(sivo.getIcon())) {stanje11.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje11.setIcon(nijeNaMestu.getIcon());} else{stanje11.setIcon(netacno.getIcon());} brojac++; } //ovo ne valja
+             case 2 -> {pokusaj12.setIcon(sivo.getIcon());  if(rez.get(1) == 1 && pokusaj12.getIcon().equals(sivo.getIcon())) {stanje12.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje12.setIcon(nijeNaMestu.getIcon());} else{stanje12.setIcon(netacno.getIcon());} brojac++; }
+             case 3 -> {pokusaj13.setIcon(sivo.getIcon()); if(rez.get(2) == 1&& pokusaj13.getIcon().equals(sivo.getIcon())) {stanje13.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje13.setIcon(nijeNaMestu.getIcon());} else{stanje13.setIcon(netacno.getIcon());} brojac++; }
+             case 4 -> {pokusaj14.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj14.getIcon().equals(sivo.getIcon())) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; }
+             case 5 -> {pokusaj21.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj21.getIcon().equals(sivo.getIcon())) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; }
+             case 6 -> {pokusaj22.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj22.getIcon().equals(sivo.getIcon())) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; }
+             case 7 -> {pokusaj23.setIcon(sivo.getIcon()); if(rez.get(2) == 1&& pokusaj23.getIcon().equals(sivo.getIcon())) {stanje23.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje23.setIcon(nijeNaMestu.getIcon());} else{stanje23.setIcon(netacno.getIcon());} brojac++; }
+             case 8 -> {pokusaj24.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj24.getIcon().equals(sivo.getIcon())) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; }
+             case 9 -> {pokusaj31.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj31.getIcon().equals(sivo.getIcon())) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; }
+             case 10 -> {pokusaj32.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj32.getIcon().equals(sivo.getIcon())) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; }
+             case 11 -> {pokusaj33.setIcon(sivo.getIcon()); if(rez.get(2) == 1&& pokusaj33.getIcon().equals(sivo.getIcon())) {stanje33.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje33.setIcon(nijeNaMestu.getIcon());} else{stanje33.setIcon(netacno.getIcon());} brojac++; }
+             case 12 -> {pokusaj34.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj34.getIcon().equals(sivo.getIcon())) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; }
+             case 13 -> {pokusaj41.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj41.getIcon().equals(sivo.getIcon())) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; }
+             case 14 ->{pokusaj42.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj42.getIcon().equals(sivo.getIcon())) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; }
+             case 15 -> {pokusaj43.setIcon(sivo.getIcon()); if(rez.get(2) == 1&& pokusaj43.getIcon().equals(sivo.getIcon())) {stanje43.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje43.setIcon(nijeNaMestu.getIcon());} else{stanje43.setIcon(netacno.getIcon());} brojac++; }
+             case 16 -> {pokusaj44.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj44.getIcon().equals(sivo.getIcon())) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; }
+             case 17 -> {pokusaj51.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj51.getIcon().equals(sivo.getIcon())) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; }
+             case 18 -> {pokusaj52.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj52.getIcon().equals(sivo.getIcon())) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; }
+             case 19 -> {pokusaj53.setIcon(sivo.getIcon()); if(rez.get(2) == 1&& pokusaj53.getIcon().equals(sivo.getIcon())) {stanje53.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje53.setIcon(nijeNaMestu.getIcon());} else{stanje53.setIcon(netacno.getIcon());} brojac++; }
+             case 20 -> {pokusaj54.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj54.getIcon().equals(sivo.getIcon())) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; }
+             case 21 -> {pokusaj61.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj61.getIcon().equals(sivo.getIcon())) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; }
+             case 22 -> {pokusaj62.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj62.getIcon().equals(sivo.getIcon())) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; }
+             case 23 -> {pokusaj63.setIcon(sivo.getIcon()); if(rez.get(2) == 1&& pokusaj63.getIcon().equals(sivo.getIcon())) {stanje63.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje63.setIcon(nijeNaMestu.getIcon());} else{stanje63.setIcon(netacno.getIcon());} brojac++; }
+             case 24 -> {pokusaj64.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj64.getIcon().equals(sivo.getIcon())) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; }
+             
+             default -> {
+             }
+         }
+       
 
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_sivoActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ljubicastoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ljubicastoActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+      switch (brojac) {
+             case 1 -> {pokusaj11.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj11.getIcon().equals(ljubicasto.getIcon())) {stanje11.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje11.setIcon(nijeNaMestu.getIcon());} else{stanje11.setIcon(netacno.getIcon());} brojac++; break;} //ovo ne valja
+             case 2 -> {pokusaj12.setIcon(ljubicasto.getIcon());  if(rez.get(1) == 2&& pokusaj12.getIcon().equals(ljubicasto.getIcon())) {stanje12.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje12.setIcon(nijeNaMestu.getIcon());} else{stanje12.setIcon(netacno.getIcon());} brojac++; break;}
+             case 3 -> {pokusaj13.setIcon(ljubicasto.getIcon()); if(rez.get(2) == 2&& pokusaj13.getIcon().equals(ljubicasto.getIcon())) {stanje13.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje13.setIcon(nijeNaMestu.getIcon());} else{stanje13.setIcon(netacno.getIcon());} brojac++; break;}
+             case 4 -> {pokusaj14.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj14.getIcon().equals(ljubicasto.getIcon())) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; break;}
+             case 5 -> {pokusaj21.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj21.getIcon().equals(ljubicasto.getIcon())) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
+             case 6 -> {pokusaj22.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj22.getIcon().equals(ljubicasto.getIcon())) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
+             case 7 -> {pokusaj23.setIcon(ljubicasto.getIcon()); if(rez.get(2) == 2&& pokusaj23.getIcon().equals(ljubicasto.getIcon())) {stanje23.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje23.setIcon(nijeNaMestu.getIcon());} else{stanje23.setIcon(netacno.getIcon());} brojac++; break;}
+             case 8 -> {pokusaj24.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj24.getIcon().equals(ljubicasto.getIcon())) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; break;}
+             case 9 -> {pokusaj31.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj31.getIcon().equals(ljubicasto.getIcon())) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
+             case 10 -> {pokusaj32.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj32.getIcon().equals(ljubicasto.getIcon())) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
+             case 11 -> {pokusaj33.setIcon(ljubicasto.getIcon()); if(rez.get(2) == 2&& pokusaj33.getIcon().equals(ljubicasto.getIcon())) {stanje33.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje33.setIcon(nijeNaMestu.getIcon());} else{stanje33.setIcon(netacno.getIcon());} brojac++; break;}
+             case 12 -> {pokusaj34.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj34.getIcon().equals(ljubicasto.getIcon())) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; break;}
+             case 13 -> {pokusaj41.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj41.getIcon().equals(ljubicasto.getIcon())) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
+             case 14 ->{pokusaj42.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj42.getIcon().equals(ljubicasto.getIcon())) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
+             case 15 -> {pokusaj43.setIcon(ljubicasto.getIcon()); if(rez.get(2) == 2&& pokusaj43.getIcon().equals(ljubicasto.getIcon())) {stanje43.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje43.setIcon(nijeNaMestu.getIcon());} else{stanje43.setIcon(netacno.getIcon());} brojac++; break;}
+             case 16 -> {pokusaj44.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj44.getIcon().equals(ljubicasto.getIcon())) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; break;}
+             case 17 -> {pokusaj51.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj51.getIcon().equals(ljubicasto.getIcon())) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
+             case 18 -> {pokusaj52.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj52.getIcon().equals(ljubicasto.getIcon())) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
+             case 19 -> {pokusaj53.setIcon(ljubicasto.getIcon()); if(rez.get(2) == 2&& pokusaj53.getIcon().equals(ljubicasto.getIcon())) {stanje53.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje53.setIcon(nijeNaMestu.getIcon());} else{stanje53.setIcon(netacno.getIcon());} brojac++; break;}
+             case 20 -> {pokusaj54.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj54.getIcon().equals(ljubicasto.getIcon())) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; break;}
+             case 21 -> {pokusaj61.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj61.getIcon().equals(ljubicasto.getIcon())) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
+             case 22 -> {pokusaj62.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj62.getIcon().equals(ljubicasto.getIcon())) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
+             case 23 -> {pokusaj63.setIcon(ljubicasto.getIcon()); if(rez.get(2) == 2&& pokusaj63.getIcon().equals(ljubicasto.getIcon())) {stanje63.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje63.setIcon(nijeNaMestu.getIcon());} else{stanje63.setIcon(netacno.getIcon());} brojac++; break;}
+             case 24 -> {pokusaj64.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj64.getIcon().equals(ljubicasto.getIcon())) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; break;}
+             
+             default -> {
+             }
+         }
 
-    }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ljubicastoActionPerformed
+
+    private void zelenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zelenoActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    switch (brojac) {
+             case 1 -> {pokusaj11.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje11.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje11.setIcon(nijeNaMestu.getIcon());} else{stanje11.setIcon(netacno.getIcon());} brojac++; break;} //ovo ne valja
+             case 2 -> {pokusaj12.setIcon(zeleno.getIcon());  if(rez.get(1) == 3) {stanje12.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje12.setIcon(nijeNaMestu.getIcon());} else{stanje12.setIcon(netacno.getIcon());} brojac++; break;}
+             case 3 -> {pokusaj13.setIcon(zeleno.getIcon()); if(rez.get(2) == 3) {stanje13.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje13.setIcon(nijeNaMestu.getIcon());} else{stanje13.setIcon(netacno.getIcon());} brojac++; break;}
+             case 4 -> {pokusaj14.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; break;}
+             case 5 -> {pokusaj21.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
+             case 6 -> {pokusaj22.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
+             case 7 -> {pokusaj23.setIcon(zeleno.getIcon()); if(rez.get(2) == 3) {stanje23.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje23.setIcon(nijeNaMestu.getIcon());} else{stanje23.setIcon(netacno.getIcon());} brojac++; break;}
+             case 8 -> {pokusaj24.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; break;}
+             case 9 -> {pokusaj31.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
+             case 10 -> {pokusaj32.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
+             case 11 -> {pokusaj33.setIcon(zeleno.getIcon()); if(rez.get(2) == 3) {stanje33.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje33.setIcon(nijeNaMestu.getIcon());} else{stanje33.setIcon(netacno.getIcon());} brojac++; break;}
+             case 12 -> {pokusaj34.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; break;}
+             case 13 -> {pokusaj41.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
+             case 14 ->{pokusaj42.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
+             case 15 -> {pokusaj43.setIcon(zeleno.getIcon()); if(rez.get(2) == 3) {stanje43.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje43.setIcon(nijeNaMestu.getIcon());} else{stanje43.setIcon(netacno.getIcon());} brojac++; break;}
+             case 16 -> {pokusaj44.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; break;}
+             case 17 -> {pokusaj51.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
+             case 18 -> {pokusaj52.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
+             case 19 -> {pokusaj53.setIcon(zeleno.getIcon()); if(rez.get(2) == 3) {stanje53.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje53.setIcon(nijeNaMestu.getIcon());} else{stanje53.setIcon(netacno.getIcon());} brojac++; break;}
+             case 20 -> {pokusaj54.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; break;}
+             case 21 -> {pokusaj61.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
+             case 22 -> {pokusaj62.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
+             case 23 -> {pokusaj63.setIcon(zeleno.getIcon()); if(rez.get(2) == 3) {stanje63.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje63.setIcon(nijeNaMestu.getIcon());} else{stanje63.setIcon(netacno.getIcon());} brojac++; break;}
+             case 24 -> {pokusaj64.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; break;}
+             
+             default -> {
+             }
+         }
 
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_zelenoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void plavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plavoActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+    switch (brojac) {
+             case 1 -> {pokusaj11.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje11.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje11.setIcon(nijeNaMestu.getIcon());} else{stanje11.setIcon(netacno.getIcon());} brojac++; break;} //ovo ne valja
+             case 2 -> {pokusaj12.setIcon(plavo.getIcon());  if(rez.get(1) == 4) {stanje12.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje12.setIcon(nijeNaMestu.getIcon());} else{stanje12.setIcon(netacno.getIcon());} brojac++; break;}
+             case 3 -> {pokusaj13.setIcon(plavo.getIcon()); if(rez.get(2) == 4) {stanje13.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje13.setIcon(nijeNaMestu.getIcon());} else{stanje13.setIcon(netacno.getIcon());} brojac++; break;}
+             case 4 -> {pokusaj14.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; break;}
+             case 5 -> {pokusaj21.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
+             case 6 -> {pokusaj22.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
+             case 7 -> {pokusaj23.setIcon(plavo.getIcon()); if(rez.get(2) == 4) {stanje23.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje23.setIcon(nijeNaMestu.getIcon());} else{stanje23.setIcon(netacno.getIcon());} brojac++; break;}
+             case 8 -> {pokusaj24.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; break;}
+             case 9 -> {pokusaj31.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
+             case 10 -> {pokusaj32.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
+             case 11 -> {pokusaj33.setIcon(plavo.getIcon()); if(rez.get(2) == 4) {stanje33.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje33.setIcon(nijeNaMestu.getIcon());} else{stanje33.setIcon(netacno.getIcon());} brojac++; break;}
+             case 12 -> {pokusaj34.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; break;}
+             case 13 -> {pokusaj41.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
+             case 14 ->{pokusaj42.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
+             case 15 -> {pokusaj43.setIcon(plavo.getIcon()); if(rez.get(2) == 4) {stanje43.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje43.setIcon(nijeNaMestu.getIcon());} else{stanje43.setIcon(netacno.getIcon());} brojac++; break;}
+             case 16 -> {pokusaj44.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; break;}
+             case 17 -> {pokusaj51.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
+             case 18 -> {pokusaj52.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
+             case 19 -> {pokusaj53.setIcon(plavo.getIcon()); if(rez.get(2) == 4) {stanje53.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje53.setIcon(nijeNaMestu.getIcon());} else{stanje53.setIcon(netacno.getIcon());} brojac++; break;}
+             case 20 -> {pokusaj54.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; break;}
+             case 21 -> {pokusaj61.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
+             case 22 -> {pokusaj62.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
+             case 23 -> {pokusaj63.setIcon(plavo.getIcon()); if(rez.get(2) == 4) {stanje63.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje63.setIcon(nijeNaMestu.getIcon());} else{stanje63.setIcon(netacno.getIcon());} brojac++; break;}
+             case 24 -> {pokusaj64.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; break;}
+             
+             default -> {
+             }
+         }
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_plavoActionPerformed
 
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+    private void pokusaj11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj11ActionPerformed
        playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
-    }//GEN-LAST:event_jButton31ActionPerformed
+    }//GEN-LAST:event_pokusaj11ActionPerformed
 
-    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+    private void pokusaj13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton34ActionPerformed
+    }//GEN-LAST:event_pokusaj13ActionPerformed
 
-    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+    private void pokusaj14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj14ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton35ActionPerformed
+    }//GEN-LAST:event_pokusaj14ActionPerformed
 
-    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+    private void pokusaj12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton36ActionPerformed
+    }//GEN-LAST:event_pokusaj12ActionPerformed
 
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+    private void pokusaj22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj22ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton30ActionPerformed
+    }//GEN-LAST:event_pokusaj22ActionPerformed
 
-    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+    private void pokusaj23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj23ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton32ActionPerformed
+    }//GEN-LAST:event_pokusaj23ActionPerformed
 
-    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+    private void pokusaj24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj24ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton33ActionPerformed
+    }//GEN-LAST:event_pokusaj24ActionPerformed
 
-    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
+    private void pokusaj21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj21ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton37ActionPerformed
+    }//GEN-LAST:event_pokusaj21ActionPerformed
 
-    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+    private void pokusaj32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj32ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton38ActionPerformed
+    }//GEN-LAST:event_pokusaj32ActionPerformed
 
-    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
+    private void pokusaj33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj33ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton39ActionPerformed
+    }//GEN-LAST:event_pokusaj33ActionPerformed
 
-    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+    private void pokusaj34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj34ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton40ActionPerformed
+    }//GEN-LAST:event_pokusaj34ActionPerformed
 
-    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+    private void pokusaj31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj31ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton41ActionPerformed
+    }//GEN-LAST:event_pokusaj31ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void pokusaj42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj42ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_pokusaj42ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void pokusaj43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj43ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_pokusaj43ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void pokusaj44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj44ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_pokusaj44ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void pokusaj41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj41ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_pokusaj41ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void pokusaj52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj52ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_pokusaj52ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void pokusaj53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj53ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_pokusaj53ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void pokusaj54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj54ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_pokusaj54ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void pokusaj51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj51ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_pokusaj51ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void pokusaj62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj62ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_pokusaj62ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void pokusaj63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj63ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_pokusaj63ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void pokusaj64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj64ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+    }//GEN-LAST:event_pokusaj64ActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void pokusaj61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokusaj61ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
+    }//GEN-LAST:event_pokusaj61ActionPerformed
+
+    private void pokusaj11StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pokusaj11StateChanged
+        // TODO add your handling code here:
+        playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+        //pokusaj11.setEnabled(false);
+        
+    }//GEN-LAST:event_pokusaj11StateChanged
+
+    private void pokusaj12StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pokusaj12StateChanged
+        // TODO add your handling code here:
+        playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+        //pokusaj12.setEnabled(false);
+    }//GEN-LAST:event_pokusaj12StateChanged
+
+    private void pokusaj13StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pokusaj13StateChanged
+        // TODO add your handling code here:
+                playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+       // pokusaj13.setEnabled(false);
+    }//GEN-LAST:event_pokusaj13StateChanged
+
+    private void pokusaj14PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_pokusaj14PropertyChange
+        // TODO add your handling code here:
+          playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
+        //pokusaj14.setEnabled(false);
+    }//GEN-LAST:event_pokusaj14PropertyChange
 
     /**
      * @param args the command line arguments
@@ -754,72 +1038,75 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
+    private javax.swing.JButton crveno;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel50;
+    private javax.swing.JButton ljubicasto;
+    private javax.swing.JButton narandzasto;
+    private javax.swing.JLabel netacno;
+    private javax.swing.JLabel nijeNaMestu;
+    private javax.swing.JButton plavo;
+    private javax.swing.JButton pokusaj11;
+    private javax.swing.JButton pokusaj12;
+    private javax.swing.JButton pokusaj13;
+    private javax.swing.JButton pokusaj14;
+    private javax.swing.JButton pokusaj21;
+    private javax.swing.JButton pokusaj22;
+    private javax.swing.JButton pokusaj23;
+    private javax.swing.JButton pokusaj24;
+    private javax.swing.JButton pokusaj31;
+    private javax.swing.JButton pokusaj32;
+    private javax.swing.JButton pokusaj33;
+    private javax.swing.JButton pokusaj34;
+    private javax.swing.JButton pokusaj41;
+    private javax.swing.JButton pokusaj42;
+    private javax.swing.JButton pokusaj43;
+    private javax.swing.JButton pokusaj44;
+    private javax.swing.JButton pokusaj51;
+    private javax.swing.JButton pokusaj52;
+    private javax.swing.JButton pokusaj53;
+    private javax.swing.JButton pokusaj54;
+    private javax.swing.JButton pokusaj61;
+    private javax.swing.JButton pokusaj62;
+    private javax.swing.JButton pokusaj63;
+    private javax.swing.JButton pokusaj64;
+    private javax.swing.JButton sivo;
+    private javax.swing.JLabel stanje11;
+    private javax.swing.JLabel stanje12;
+    private javax.swing.JLabel stanje13;
+    private javax.swing.JLabel stanje14;
+    private javax.swing.JLabel stanje21;
+    private javax.swing.JLabel stanje22;
+    private javax.swing.JLabel stanje23;
+    private javax.swing.JLabel stanje24;
+    private javax.swing.JLabel stanje31;
+    private javax.swing.JLabel stanje32;
+    private javax.swing.JLabel stanje33;
+    private javax.swing.JLabel stanje34;
+    private javax.swing.JLabel stanje41;
+    private javax.swing.JLabel stanje42;
+    private javax.swing.JLabel stanje43;
+    private javax.swing.JLabel stanje44;
+    private javax.swing.JLabel stanje51;
+    private javax.swing.JLabel stanje52;
+    private javax.swing.JLabel stanje53;
+    private javax.swing.JLabel stanje54;
+    private javax.swing.JLabel stanje61;
+    private javax.swing.JLabel stanje62;
+    private javax.swing.JLabel stanje63;
+    private javax.swing.JLabel stanje64;
+    private javax.swing.JLabel tacno;
     private java.awt.TextField textField1;
     private java.awt.TextField textField3;
+    private javax.swing.JButton zeleno;
     // End of variables declaration//GEN-END:variables
 }

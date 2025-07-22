@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -237,9 +239,16 @@ public class KOZNAZNA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
-        ASOCIJACIJE a1 = new ASOCIJACIJE();
-        a1.show();
-        dispose();
+        ASOCIJACIJE a1;
+              try {
+                  a1 = new ASOCIJACIJE();
+                  a1.show();
+                  dispose();
+              } catch (Exception ex) {
+                  Logger.getLogger(KOZNAZNA.class.getName()).log(Level.SEVERE, null, ex);
+              }
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
