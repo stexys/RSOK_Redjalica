@@ -27,8 +27,27 @@ public class Slagalica extends javax.swing.JFrame {
      * Creates new form Slagalica
      */
          private Timer timer ;
+         rezultat r = new rezultat(); // popuni se na kraju r
+         int poeniCovek,poeniKompjuter;
+         double tezina; // 0.45 = lako, 0.65 = srednje, 0.85 = tesko
     public Slagalica() {
         initComponents();
+            
+              timer = new Timer(1000, new ActionListener() { // 5000 is five Second
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
+            countme();
+            }
+        });
+      
+       timer.start();
+    }
+    
+        public Slagalica(double tezina) {
+        initComponents();
+        this.tezina = tezina;
               timer = new Timer(1000, new ActionListener() { // 5000 is five Second
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,6 +64,16 @@ public class Slagalica extends javax.swing.JFrame {
    public void countme(){
    
    i-- ;
+   
+   if(i==0) //kraj igre.. ovako treba uraditi ili na slican nacin i za ostale
+   {
+       r.slagalicaPoeniCovek = poeniCovek;
+       r.slagalicaPoeniKompjuter = poeniKompjuter;
+       
+        MOJBROJ m2 = new MOJBROJ(tezina,r); //ovo se desava kad je kraj igre.. treba dodati r da se prosledjuje.. na kraju poslednji kupi sve
+        m2.show();
+        dispose();
+   }
    
    jLabel2.setText(String.valueOf(i));
    
@@ -351,7 +380,7 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
-        MOJBROJ m2 = new MOJBROJ();
+        MOJBROJ m2 = new MOJBROJ(tezina,r); //ovo se desava kad je kraj igre
         m2.show();
         dispose();
         playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");

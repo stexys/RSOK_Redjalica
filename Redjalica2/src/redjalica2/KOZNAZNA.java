@@ -27,6 +27,9 @@ public class KOZNAZNA extends javax.swing.JFrame {
      * Creates new form KOZNAZNA
      */
           private Timer timer ;
+          double tezina;
+          int poeniCovek,poeniKompjuter;
+          rezultat r;
     public KOZNAZNA() {
         initComponents();
             timer = new Timer(1000, new ActionListener() { // 5000 is five Second
@@ -41,6 +44,22 @@ public class KOZNAZNA extends javax.swing.JFrame {
        timer.start();
     }
     int i = 60;
+
+    KOZNAZNA(double tezina, rezultat r) {
+                initComponents();
+                this.r = new rezultat(r);
+                this.tezina = tezina;
+            timer = new Timer(1000, new ActionListener() { // 5000 is five Second
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
+            countme();
+            }
+        });
+      
+       timer.start();
+    }
     
    public void countme(){
    
@@ -238,10 +257,11 @@ public class KOZNAZNA extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
-
+//OVO SE STAVLJA NA KRAJU, PRELAZAK U SLEDECU IGRU.. 
+// if(uslov kraj partije)
         ASOCIJACIJE a1;
               try {
-                  a1 = new ASOCIJACIJE();
+                  a1 = new ASOCIJACIJE(tezina,r);
                   a1.show();
                   dispose();
               } catch (Exception ex) {

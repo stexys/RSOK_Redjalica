@@ -25,6 +25,11 @@ public class Spojnice extends javax.swing.JFrame {
      * Creates new form Spojnice
      */
          private Timer timer ;
+         double tezina;
+         rezultat r;
+         int poeniCovek,poeniKompjuter; //kada odigra covek i ili kompjuter uradi se r.setPoeniCovek(poeniCovek), r.setPoeniKompjuter(poeniKompjuter)
+         int i = 60;
+         
     public Spojnice() {
         initComponents();
               timer = new Timer(1000, new ActionListener() { // 5000 is five Second
@@ -38,7 +43,23 @@ public class Spojnice extends javax.swing.JFrame {
       
        timer.start();
     }
-    int i = 60;
+    
+
+    Spojnice(double tezina,rezultat r) {
+               initComponents();
+               this.tezina = tezina;
+               this.r = new rezultat(r);
+              timer = new Timer(1000, new ActionListener() { // 5000 is five Second
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
+            countme();
+            }
+        });
+      
+       timer.start();
+    }
     
    public void countme(){
    
@@ -440,7 +461,7 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
          playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
-        skocko s1 = new skocko();
+        skocko s1 = new skocko(tezina,r);
         s1.show();
         dispose();
     }//GEN-LAST:event_jButton24ActionPerformed

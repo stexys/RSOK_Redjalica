@@ -18,15 +18,128 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  */
 public class rezultat extends javax.swing.JFrame {
 
+    int asocijacijePoeniCovek,asocijacijePoeniKompjuter;
+     int koznaznaPoeniCovek,koznaznaPoeniKompjuter;
+      int mojbrojPoeniCovek,mojbrojPoeniKompjuter;
+       int slagalicaPoeniCovek,slagalicaPoeniKompjuter;
+        int spojnicePoeniCovek,spojnicePoeniKompjuter;
+         int skockoPoeniCovek,skockoPoeniKompjuter;
+          int ukupnoPoeniCovek,ukupnoPoeniKompjuter;
     /**
      * Creates new form rezultat
      */
-    public rezultat() {
-        initComponents();
+          public rezultat(){
+                  initComponents();
                       this.setSize(1100, 750);
     this.setResizable(false);
     }
+    public rezultat(rezultat r) {
+        this.asocijacijePoeniCovek = r.asocijacijePoeniCovek;
+        this.asocijacijePoeniKompjuter = r.asocijacijePoeniKompjuter;
+        
+        this.koznaznaPoeniCovek = r.koznaznaPoeniCovek;
+        this.koznaznaPoeniKompjuter = r.koznaznaPoeniKompjuter;
+        
+        this.mojbrojPoeniCovek = r.mojbrojPoeniCovek;
+        this.mojbrojPoeniKompjuter = r.mojbrojPoeniKompjuter;
+        
+        this.slagalicaPoeniCovek = r.slagalicaPoeniCovek;
+        this.slagalicaPoeniKompjuter = r.slagalicaPoeniKompjuter;
+        
+        this.spojnicePoeniCovek = r.spojnicePoeniCovek;
+        this.spojnicePoeniKompjuter = r.spojnicePoeniKompjuter;
+        
+        this.skockoPoeniCovek = r.skockoPoeniCovek;
+        this.skockoPoeniKompjuter = r.skockoPoeniKompjuter;
+        
+        this.ukupnoPoeniCovek = r.asocijacijePoeniCovek + r.koznaznaPoeniCovek + r.mojbrojPoeniCovek + r.slagalicaPoeniCovek + r.spojnicePoeniCovek + r.skockoPoeniCovek;
+        this.ukupnoPoeniKompjuter = r.asocijacijePoeniKompjuter + r.koznaznaPoeniKompjuter + r.mojbrojPoeniKompjuter + r.slagalicaPoeniKompjuter + r.spojnicePoeniKompjuter + r.skockoPoeniKompjuter;
+        
+        initComponents(); //prvo inicijalizuje komponente pa ih popunjava
+        
+               this.labelaAsocijacijePoeniCovek.setText(String.valueOf(this.asocijacijePoeniCovek));
+        this.labelaAsocijacijePoeniKompjuter.setText(String.valueOf(this.asocijacijePoeniKompjuter));
+        
+        this.labelaSkockoPoeniCovek.setText(String.valueOf(this.skockoPoeniCovek));
+        this.labelaSkockoPoeniKompjuter.setText(String.valueOf(this.skockoPoeniKompjuter));
+        
+        this.labelaZnaSePoeniCovek.setText(String.valueOf(this.koznaznaPoeniCovek));
+        this.labelaZnaSePoeniKompjuter.setText(String.valueOf(this.koznaznaPoeniKompjuter));
+        
+        this.labelaMojBrojPoeniCovek.setText(String.valueOf(this.mojbrojPoeniCovek));
+        this.labelaMojBrojPoeniKompjuter.setText(String.valueOf(this.mojbrojPoeniKompjuter));
+        
+        this.labelaSpojnicePoeniCovek.setText(String.valueOf(this.spojnicePoeniCovek));
+        this.labelaSpojnicePoeniKompjuter.setText(String.valueOf(this.spojnicePoeniKompjuter));
+        
+        this.labelaSlagalicaPoeniCovek.setText(String.valueOf(this.slagalicaPoeniCovek));
+        this.labelaSlagalicaPoeniKompjuter.setText(String.valueOf(this.slagalicaPoeniKompjuter));
+        
+        this.labelaUkupnoPoeniCovek.setText(String.valueOf(this.ukupnoPoeniCovek));
+        this.labelaUkupnoPoeniKompjuter.setText(String.valueOf(this.ukupnoPoeniKompjuter));
+         
+              
+        
+        
 
+        
+        
+                      this.setSize(1100, 750);
+                      
+    this.setResizable(false);
+    }
+
+    //geteri i seteri su opcioni, zavise od modifikatora pristupa atributa
+    public void setKoznaznaPoeniCovek(int koznaznaPoeniCovek) {
+        this.koznaznaPoeniCovek = koznaznaPoeniCovek;
+    }
+
+    public void setKoznaznaPoeniKompjuter(int koznaznaPoeniKompjuter) {
+        this.koznaznaPoeniKompjuter = koznaznaPoeniKompjuter;
+    }
+
+    public void setMojbrojPoeniCovek(int mojbrojPoeniCovek) {
+        this.mojbrojPoeniCovek = mojbrojPoeniCovek;
+    }
+
+    public void setMojbrojPoeniKompjuter(int mojbrojPoeniKompjuter) {
+        this.mojbrojPoeniKompjuter = mojbrojPoeniKompjuter;
+    }
+
+    public void setSlagalicaPoeniCovek(int slagalicaPoeniCovek) {
+        this.slagalicaPoeniCovek = slagalicaPoeniCovek;
+    }
+
+    public void setSlagalicaPoeniKompjuter(int slagalicaPoeniKompjuter) {
+        this.slagalicaPoeniKompjuter = slagalicaPoeniKompjuter;
+    }
+
+    public void setSpojnicePoeniCovek(int spojnicePoeniCovek) {
+        this.spojnicePoeniCovek = spojnicePoeniCovek;
+    }
+
+    public void setSpojnicePoeniKompjuter(int spojnicePoeniKompjuter) {
+        this.spojnicePoeniKompjuter = spojnicePoeniKompjuter;
+    }
+
+    public void setSkockoPoeniCovek(int skockoPoeniCovek) {
+        this.skockoPoeniCovek = skockoPoeniCovek;
+    }
+
+    public void setSkockoPoeniKompjuter(int skockoPoeniKompjuter) {
+        this.skockoPoeniKompjuter = skockoPoeniKompjuter;
+    }
+
+    public void setUkupnoPoeniCovek(int ukupnoPoeniCovek) {
+        this.ukupnoPoeniCovek = ukupnoPoeniCovek;
+    }
+
+    public void setUkupnoPoeniKompjuter(int ukupnoPoeniKompjuter) {
+        this.ukupnoPoeniKompjuter = ukupnoPoeniKompjuter;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,20 +149,20 @@ public class rezultat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        labelaSlagalicaPoeniKompjuter = new javax.swing.JTextField();
+        labelaMojBrojPoeniCovek = new javax.swing.JTextField();
+        labelaMojBrojPoeniKompjuter = new javax.swing.JTextField();
+        labelaSpojnicePoeniCovek = new javax.swing.JTextField();
+        labelaSpojnicePoeniKompjuter = new javax.swing.JTextField();
+        labelaSkockoPoeniCovek = new javax.swing.JTextField();
+        labelaSkockoPoeniKompjuter = new javax.swing.JTextField();
+        labelaZnaSePoeniCovek = new javax.swing.JTextField();
+        labelaZnaSePoeniKompjuter = new javax.swing.JTextField();
+        labelaAsocijacijePoeniCovek = new javax.swing.JTextField();
+        labelaAsocijacijePoeniKompjuter = new javax.swing.JTextField();
+        labelaSlagalicaPoeniCovek = new javax.swing.JTextField();
+        labelaUkupnoPoeniCovek = new javax.swing.JTextField();
+        labelaUkupnoPoeniKompjuter = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -79,85 +192,90 @@ public class rezultat extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(215, 228, 192));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        labelaSlagalicaPoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaSlagalicaPoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaSlagalicaPoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        labelaSlagalicaPoeniKompjuter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                labelaSlagalicaPoeniKompjuterActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 90, -1));
+        getContentPane().add(labelaSlagalicaPoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 90, -1));
 
-        jTextField2.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 90, -1));
+        labelaMojBrojPoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaMojBrojPoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaMojBrojPoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaMojBrojPoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 90, -1));
 
-        jTextField3.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField3.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(215, 228, 192));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        labelaMojBrojPoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaMojBrojPoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaMojBrojPoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        labelaMojBrojPoeniKompjuter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                labelaMojBrojPoeniKompjuterActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 90, -1));
+        getContentPane().add(labelaMojBrojPoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 90, -1));
 
-        jTextField4.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 90, -1));
+        labelaSpojnicePoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaSpojnicePoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaSpojnicePoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaSpojnicePoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 90, -1));
 
-        jTextField5.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 90, -1));
+        labelaSpojnicePoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaSpojnicePoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaSpojnicePoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaSpojnicePoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 90, -1));
 
-        jTextField6.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 90, -1));
+        labelaSkockoPoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaSkockoPoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaSkockoPoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaSkockoPoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 90, -1));
 
-        jTextField7.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField7.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 90, -1));
+        labelaSkockoPoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaSkockoPoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaSkockoPoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaSkockoPoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 90, -1));
 
-        jTextField8.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField8.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 90, -1));
+        labelaZnaSePoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaZnaSePoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaZnaSePoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaZnaSePoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 90, -1));
 
-        jTextField9.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField9.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 480, 90, -1));
+        labelaZnaSePoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaZnaSePoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaZnaSePoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaZnaSePoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 480, 90, -1));
 
-        jTextField10.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField10.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 90, -1));
+        labelaAsocijacijePoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaAsocijacijePoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaAsocijacijePoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        labelaAsocijacijePoeniCovek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelaAsocijacijePoeniCovekActionPerformed(evt);
+            }
+        });
+        getContentPane().add(labelaAsocijacijePoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 90, -1));
 
-        jTextField11.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField11.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 90, -1));
+        labelaAsocijacijePoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaAsocijacijePoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaAsocijacijePoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaAsocijacijePoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 90, -1));
 
-        jTextField12.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField12.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 90, -1));
+        labelaSlagalicaPoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaSlagalicaPoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaSlagalicaPoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaSlagalicaPoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 90, -1));
 
-        jTextField13.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField13.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, 90, -1));
+        labelaUkupnoPoeniCovek.setBackground(new java.awt.Color(127, 127, 127));
+        labelaUkupnoPoeniCovek.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaUkupnoPoeniCovek.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaUkupnoPoeniCovek, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, 90, -1));
 
-        jTextField14.setBackground(new java.awt.Color(127, 127, 127));
-        jTextField14.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(215, 228, 192));
-        getContentPane().add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, 90, -1));
+        labelaUkupnoPoeniKompjuter.setBackground(new java.awt.Color(127, 127, 127));
+        labelaUkupnoPoeniKompjuter.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        labelaUkupnoPoeniKompjuter.setForeground(new java.awt.Color(215, 228, 192));
+        getContentPane().add(labelaUkupnoPoeniKompjuter, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(215, 228, 192));
@@ -306,13 +424,17 @@ public class rezultat extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void labelaMojBrojPoeniKompjuterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelaMojBrojPoeniKompjuterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_labelaMojBrojPoeniKompjuterActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void labelaSlagalicaPoeniKompjuterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelaSlagalicaPoeniKompjuterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_labelaSlagalicaPoeniKompjuterActionPerformed
+
+    private void labelaAsocijacijePoeniCovekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelaAsocijacijePoeniCovekActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelaAsocijacijePoeniCovekActionPerformed
        private void playSound(String soundFile) {
     try {
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFile).getAbsoluteFile());
@@ -382,19 +504,19 @@ public class rezultat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField labelaAsocijacijePoeniCovek;
+    private javax.swing.JTextField labelaAsocijacijePoeniKompjuter;
+    private javax.swing.JTextField labelaMojBrojPoeniCovek;
+    private javax.swing.JTextField labelaMojBrojPoeniKompjuter;
+    private javax.swing.JTextField labelaSkockoPoeniCovek;
+    private javax.swing.JTextField labelaSkockoPoeniKompjuter;
+    private javax.swing.JTextField labelaSlagalicaPoeniCovek;
+    private javax.swing.JTextField labelaSlagalicaPoeniKompjuter;
+    private javax.swing.JTextField labelaSpojnicePoeniCovek;
+    private javax.swing.JTextField labelaSpojnicePoeniKompjuter;
+    private javax.swing.JTextField labelaUkupnoPoeniCovek;
+    private javax.swing.JTextField labelaUkupnoPoeniKompjuter;
+    private javax.swing.JTextField labelaZnaSePoeniCovek;
+    private javax.swing.JTextField labelaZnaSePoeniKompjuter;
     // End of variables declaration//GEN-END:variables
 }

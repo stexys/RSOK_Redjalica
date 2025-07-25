@@ -4,11 +4,13 @@
  */
 package redjalica2;
 
+import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
@@ -27,16 +29,44 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
     /**
      * Creates new form ASOCIJACIJE
      */
+    
+        //konstruktor treba da prima tezinu(npr int broj 0,1,2), treba na kraju runde da prosledjuje bodove.. pCovek i a2.pKompjuter za neku statistiku
+        //objekat statistika.. pa ima bodoviCovek, bodoviKompjuter za svaku igru.. objekat se prosledjuje konstruktorom u ostale igrice
        private Timer timer ;
        private String[] resenja;
+       rezultat r;
        int i = 60;
+       double tezina;
        int pCovek = 0,pKompjuter = 0;
        boolean igraKompjuter = false;
        boolean igraCovek = true;
+       boolean aKolonaPogodjena,bKolonaPogodjena,cKolonaPogodjena,dKolonaPogodjena;
        
-    public ASOCIJACIJE() throws Exception {
+    public ASOCIJACIJE(double tezina, rezultat r) throws Exception {
         initComponents();
-        
+        this.tezina = tezina;
+        this.r = new rezultat(r);
+            getRandomLineFromTheFile("C:\\Users\\PC\\Desktop\\asocijacije.txt");
+            timer = new Timer(1000, new ActionListener() { // 5000 is five Second
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
+            countme();
+            }
+        });
+      
+       timer.start();
+    }
+    
+    public ASOCIJACIJE(boolean igraKompjuter, int pCovek, double tezina, rezultat r) throws Exception {
+        super();
+        initComponents();
+            this.r = new rezultat(r);
+            this.tezina = tezina;
+            this.igraKompjuter = igraKompjuter;
+            this.pCovek = pCovek;
+            this.poeniCovek.setText(String.valueOf(pCovek));
             getRandomLineFromTheFile("C:\\Users\\PC\\Desktop\\asocijacije.txt");
             timer = new Timer(1000, new ActionListener() { // 5000 is five Second
             @Override
@@ -54,6 +84,120 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
    public void countme(){
    
        if(i>0) i-- ;
+       if(i == 0) {
+           //i = -1;
+           if(!igraKompjuter) //fora je da treba 2 boolean.. 1 ako covek ne resi asocijaciju.. a kompjuter nije igrao
+           {igraKompjuter = true;
+               ASOCIJACIJE a2;
+              try {
+                  dispose();
+                  a2 = new ASOCIJACIJE(true,pCovek,tezina,r);
+                  a2.show();
+                  
+                  
+                  //Random rand = new Random();
+                  //boolean val = rand.nextInt(25)==0;
+                  
+                  
+                  
+                  //u zavisnosti od tezine.. lako 0-30%
+                  a2.a1.doClick();
+                  //Thread.sleep(2000);
+                  a2.a2.doClick();
+                  //Thread.sleep(2000);
+                  a2.a3.doClick();
+                  //Thread.sleep(2000);
+                  a2.a4.doClick();
+                  //Thread.sleep(2000);
+                  
+                  //ako je uslov prosao, dobija poene svakako racunar.. i na kraju se diposuje..
+                  if(Math.random()<tezina) //85% sanse && tezina - tesko, za lako idk koji % oko 45, srednje 65%
+                  {a2.A.setText(a2.resenja[4]); //treba ti A.textChanged.. 
+                      a2.pKompjuter+=10;
+                      a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));
+                      //a2.r.asocijacijePoeniKompjuter = a2.pKompjuter;
+                  }
+                       //za tezak nivo
+                  
+                  a2.b1.doClick();
+                  //Thread.sleep(2000);
+                  a2.b2.doClick();
+                  //Thread.sleep(2000);
+                  a2.b3.doClick();
+                  //Thread.sleep(2000);
+                  a2.b4.doClick();
+                  
+                 
+                  if(Math.random()<tezina) //85% sanse && tezina - tesko, za lako idk koji % oko 45, srednje 65%
+                  {a2.B.setText(a2.resenja[9]); //treba ti A.textChanged..
+                       //za tezak nivo
+                       a2.pKompjuter+=10;   
+                      a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));
+                      //a2.r.asocijacijePoeniKompjuter = a2.pKompjuter;
+                  }
+
+                  //u zavisnosti od tezine.. lako 0-30%
+                  a2.c1.doClick();
+                  //Thread.sleep(2000);
+                  a2.c2.doClick();
+                  //Thread.sleep(2000);
+                  a2.c3.doClick();
+                  //Thread.sleep(2000);
+                  a2.c4.doClick();
+                  //Thread.sleep(2000);
+                  
+               
+                  if(Math.random()<tezina) //85% sanse && tezina - tesko, za lako idk koji % oko 45, srednje 65%
+                  {a2.C.setText(a2.resenja[14]); //treba ti A.textChanged..
+                       //za tezak nivo   
+                      a2.pKompjuter+=10;
+                      a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));
+                      //a2.r.asocijacijePoeniKompjuter = a2.pKompjuter;
+                  }
+
+                  //u zavisnosti od tezine.. lako 0-30%
+                  a2.d1.doClick();
+                  //Thread.sleep(2000);
+                  a2.d2.doClick();
+                  //Thread.sleep(2000);
+                  a2.d3.doClick();
+                  //Thread.sleep(2000);
+                  a2.d4.doClick();
+                  //Thread.sleep(2000);
+                  
+                  
+                  if(Math.random()<tezina) //85% sanse && tezina - tesko, za lako idk koji % oko 45, srednje 65%
+                  { a2.D.setText(a2.resenja[19]); //treba ti A.textChanged..
+                       //za tezak nivo         
+                      a2.pKompjuter+=10;
+                      a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));
+                      //a2.r.asocijacijePoeniKompjuter = a2.pKompjuter;
+                  }
+  
+                  
+                  if(Math.random()<tezina) //85% sanse && tezina - tesko, za lako idk koji % oko 45, srednje 65%
+                  {a2.resenje.setText(a2.resenja[20]); //treba ti A.textChanged..
+                       //za tezak nivo                       
+                      a2.pKompjuter+=10;
+                      a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));}   
+                  
+                  a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));
+                  a2.r.asocijacijePoeniKompjuter = a2.pKompjuter;
+                 
+                  if(igraKompjuter) //ovo si dodao
+                {dispose();
+                rezultat c = new rezultat(a2.r);
+                c.show();
+                }
+              } catch (Exception ex) {
+                  Logger.getLogger(ASOCIJACIJE.class.getName()).log(Level.SEVERE, null, ex);
+              }
+       }
+       if(igraKompjuter) 
+       {dispose();
+       //rezultat r = new rezultat(a2.r);
+       } //i prikaz statistike pobednika
+       }//this.dispose(); //kad se zavrsi tajmer... al tajmer zavisi od tezine.. treba konstruktor da prosledjuje tezinu
    
    tajmer.setText(String.valueOf(i));
    
@@ -429,40 +573,48 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
     private void a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1ActionPerformed
      playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
      a1.setText(resenja[0]);
+     //a1.setEnabled(false);
 
     }//GEN-LAST:event_a1ActionPerformed
 
     private void a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
     a2.setText(resenja[1]);
+    //a2.setEnabled(false);
+
 
     }//GEN-LAST:event_a2ActionPerformed
 
     private void a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a3ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
     a3.setText(resenja[2]);
+    //a3.setEnabled(false);
 
     }//GEN-LAST:event_a3ActionPerformed
 
     private void a4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a4ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
     a4.setText(resenja[3]);
+    //a4.setEnabled(false);
 
     }//GEN-LAST:event_a4ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
     b4.setText(resenja[8]);
+    //b4.setEnabled(false);
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
     b3.setText(resenja[7]);
+    //b3.setEnabled(false); //ovo je kad bi racunar igrao tako da klikne pa da se odigra potez racunara
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
      playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
     b2.setText(resenja[6]);
+    //b2.setEnabled(false);
     
     }//GEN-LAST:event_b2ActionPerformed
 
@@ -559,6 +711,7 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         A.setText(resenja[4]);
         pCovek += 10;
         poeniCovek.setText(String.valueOf(pCovek));
+        aKolonaPogodjena = true;
         //igraCovek = false;
     }
     else if(A.getText().equalsIgnoreCase(resenja[4]) && igraKompjuter == true && igraCovek == false)
@@ -566,6 +719,7 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         A.setText(resenja[4]);
         pKompjuter += 10;
         poeniKompjuter.setText(String.valueOf(pKompjuter));
+        aKolonaPogodjena = true;
     }
 
     }//GEN-LAST:event_AActionPerformed
@@ -584,6 +738,8 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         //String s = String.valueOf(skor);
         pCovek += 10;
         poeniCovek.setText(String.valueOf(pCovek));
+        bKolonaPogodjena = true;
+        
     }
    
 
@@ -603,6 +759,7 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         //String s = String.valueOf(skor);
         pCovek += 10;
         poeniCovek.setText(String.valueOf(pCovek));
+        cKolonaPogodjena = true;
     }
     
 
@@ -622,13 +779,14 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         //String s = String.valueOf(skor);
         pCovek += 10;
         poeniCovek.setText(String.valueOf(pCovek));
+        dKolonaPogodjena = true;
     }
 
     }//GEN-LAST:event_DActionPerformed
 
     private void resenjeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resenjeActionPerformed
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
-    if(resenje.getText().equalsIgnoreCase(resenja[20]))
+    if(resenje.getText().equalsIgnoreCase(resenja[20]) && !igraKompjuter)
     {
         a1.setText(resenja[0]);  // ako ovo odma postavi onda samo stavis details da je this details =.. tj kao property pa on click update..
         a2.setText(resenja[1]);
@@ -658,8 +816,42 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         //poeniCovek.setText(Integer.toString(Integer.parseInt(poeniCovek.getText())+10));
         //int skor = Integer.parseInt(poeniCovek.getText())+10;
         //String s = String.valueOf(skor);
-        pCovek += 10;
+        if(!aKolonaPogodjena && !bKolonaPogodjena && !cKolonaPogodjena && !dKolonaPogodjena) //1
+            pCovek += 50;
+        else if (!aKolonaPogodjena && !bKolonaPogodjena && !cKolonaPogodjena && dKolonaPogodjena) //2
+            pCovek += 40;
+        else if (!aKolonaPogodjena && !bKolonaPogodjena && cKolonaPogodjena && !dKolonaPogodjena) //3
+            pCovek += 40;
+        else if (!aKolonaPogodjena && !bKolonaPogodjena && cKolonaPogodjena && dKolonaPogodjena) //4
+            pCovek += 30;
+        else if (!aKolonaPogodjena && bKolonaPogodjena && !cKolonaPogodjena && !dKolonaPogodjena) //5
+            pCovek += 40;
+        else if (!aKolonaPogodjena && bKolonaPogodjena && !cKolonaPogodjena && dKolonaPogodjena) //6
+            pCovek += 30;
+        else if (!aKolonaPogodjena && bKolonaPogodjena && cKolonaPogodjena && !dKolonaPogodjena) //7
+            pCovek += 30;
+        else if (!aKolonaPogodjena && bKolonaPogodjena && cKolonaPogodjena && dKolonaPogodjena) //8
+            pCovek += 20;
+        else if (aKolonaPogodjena && !bKolonaPogodjena && !cKolonaPogodjena && !dKolonaPogodjena) ///9
+            pCovek += 40;
+        else if (aKolonaPogodjena && !bKolonaPogodjena && !cKolonaPogodjena && dKolonaPogodjena) //10
+            pCovek += 30;
+        else if (aKolonaPogodjena && !bKolonaPogodjena && cKolonaPogodjena && !dKolonaPogodjena) //11
+            pCovek += 30;
+        else if (aKolonaPogodjena && !bKolonaPogodjena && cKolonaPogodjena && dKolonaPogodjena) //12
+            pCovek += 20;
+        else if (aKolonaPogodjena && bKolonaPogodjena && !cKolonaPogodjena && !dKolonaPogodjena) //13
+            pCovek += 30;
+        else if (aKolonaPogodjena && bKolonaPogodjena && !cKolonaPogodjena && dKolonaPogodjena) //14
+            pCovek += 20;
+        else if (aKolonaPogodjena && bKolonaPogodjena && cKolonaPogodjena && !dKolonaPogodjena) //15
+            pCovek += 20;
+        else if (aKolonaPogodjena && bKolonaPogodjena && cKolonaPogodjena && dKolonaPogodjena) //16
+            pCovek += 10;
+        //if(aKolona)
         poeniCovek.setText(String.valueOf(pCovek));
+        //igraKompjuter = true;
+        i = 0;
     }
     
 
@@ -693,10 +885,11 @@ playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\m
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() { //kad se ovo pokrece
             public void run() {
                 try {
-                    new ASOCIJACIJE().setVisible(true);
+                    rezultat r = new rezultat();
+                    new ASOCIJACIJE(0.45,r).setVisible(true);
                 } catch (Exception ex) {
                     Logger.getLogger(ASOCIJACIJE.class.getName()).log(Level.SEVERE, null, ex);
                 }

@@ -66,7 +66,7 @@ public class tezina extends javax.swing.JFrame {
         jButton12.setText("TEŠKO");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                teskodugme(evt);
             }
         });
         jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 350, 40));
@@ -99,7 +99,7 @@ public class tezina extends javax.swing.JFrame {
         jButton11.setText("SREDNJE");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                srednjedugme(evt);
             }
         });
         jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 350, 40));
@@ -152,27 +152,27 @@ public class tezina extends javax.swing.JFrame {
     private void lakodugme(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lakodugme
    playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
-        Slagalica s1 = new Slagalica();
+        Slagalica s1 = new Slagalica(0.45);
         s1.show();
         dispose();
     }//GEN-LAST:event_lakodugme
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void srednjedugme(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_srednjedugme
    playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
-        Slagalica s1 = new Slagalica();
+        Slagalica s1 = new Slagalica(0.65);
         s1.show();
         dispose();
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_srednjedugme
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void teskodugme(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teskodugme
    playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
 
         
-        Slagalica s1 = new Slagalica();
+        Slagalica s1 = new Slagalica(0.85); //sansa da bot pogodi tacan odgovor 85% utice na tezinu.. 
         s1.show();
         dispose();
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_teskodugme
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
    playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");

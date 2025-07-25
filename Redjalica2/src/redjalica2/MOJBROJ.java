@@ -22,7 +22,9 @@ import javax.swing.Timer;
 public class MOJBROJ extends javax.swing.JFrame {
 
        private Timer timer ;
-   
+       double tezina;
+       int i = 60;
+       rezultat r;
     
     /**
      * Creates new form MOJBROJ
@@ -41,7 +43,23 @@ public class MOJBROJ extends javax.swing.JFrame {
       
        timer.start();
     }
-    int i = 60;
+    
+
+    MOJBROJ(double tezina, rezultat r) {
+                initComponents();
+                this.r = new rezultat(r);
+      this.tezina = tezina;
+         timer = new Timer(1000, new ActionListener() { // 5000 is five Second
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
+            countme();
+            }
+        });
+      
+       timer.start();
+    }
     
    public void countme(){
    
@@ -388,7 +406,7 @@ public class MOJBROJ extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
-    Spojnice s2 = new Spojnice();
+    Spojnice s2 = new Spojnice(tezina,r);
     s2.show();
     dispose();
     playSound("C:\\Users\\Laki\\Documents\\NetBeansProjects\\Redjalica2\\src\\com\\mycompany\\redjalica\\slike\\klikati.wav");
