@@ -63,6 +63,7 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
         super();
         initComponents();
             this.r = new rezultat(r);
+            r.asocijacijePoeniCovek = pCovek;
             this.tezina = tezina;
             this.igraKompjuter = igraKompjuter;
             this.pCovek = pCovek;
@@ -92,6 +93,7 @@ public class ASOCIJACIJE extends javax.swing.JFrame {
               try {
                   dispose();
                   a2 = new ASOCIJACIJE(true,pCovek,tezina,r);
+                  a2.r.asocijacijePoeniCovek = pCovek;
                   a2.show();
                   
                   

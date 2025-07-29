@@ -210,7 +210,7 @@ if (index >= varijacije.length) {
            {igraKompjuter = true;
                skocko a2;
               try {
-                  this.dispose(); //bez this?
+                  dispose(); //bez this?
                   a2 = new skocko(true,pCovek,tezina,r);
                   a2.show();
                   Random rand = new Random();
@@ -326,7 +326,7 @@ if (index >= varijacije.length) {
                   }
 
            if(a2.stanje11.getIcon().equals(a2.tacno.getIcon()) && a2.stanje12.getIcon().equals(a2.tacno.getIcon())&&a2.stanje13.getIcon().equals(a2.tacno.getIcon())&& a2.stanje14.getIcon().equals(a2.tacno.getIcon()))
-                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = 0; kompjuterOdigrao = true; a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter
+                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = -1; kompjuterOdigrao = true; a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter
            
          //       if(stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
         //            {pKompjuter = 20; poeniKompjuter.setText(String.valueOf(pKompjuter)); i = 0;kompjuterOdigrao = true;} //moze bez i = 0.. 
@@ -442,7 +442,7 @@ if (index >= varijacije.length) {
                   }
       
                               if(a2.stanje21.getIcon().equals(a2.tacno.getIcon()) && a2.stanje22.getIcon().equals(a2.tacno.getIcon())&&a2.stanje23.getIcon().equals(a2.tacno.getIcon())&& a2.stanje24.getIcon().equals(a2.tacno.getIcon()))
-                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = 0; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter
+                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = -1; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter
                 // if(stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
                   //   {pKompjuter = 20; poeniKompjuter.setText(String.valueOf(pKompjuter));i = 0;kompjuterOdigrao = true;}               
 
@@ -556,7 +556,7 @@ if (index >= varijacije.length) {
                   }
     
            if(a2.stanje31.getIcon().equals(a2.tacno.getIcon()) && a2.stanje32.getIcon().equals(a2.tacno.getIcon())&&a2.stanje33.getIcon().equals(a2.tacno.getIcon())&& a2.stanje34.getIcon().equals(a2.tacno.getIcon()))
-                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = 0; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter
+                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = -1; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter
            
        //             if(stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
      //                {pKompjuter = 20; poeniKompjuter.setText(String.valueOf(pKompjuter));i = 0;kompjuterOdigrao = true;}                 
@@ -672,7 +672,7 @@ if (index >= varijacije.length) {
                   }
 
             if(a2.stanje41.getIcon().equals(a2.tacno.getIcon()) && a2.stanje42.getIcon().equals(a2.tacno.getIcon())&&a2.stanje43.getIcon().equals(a2.tacno.getIcon())&& a2.stanje44.getIcon().equals(a2.tacno.getIcon()))
-                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = 0; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter                  
+                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = -1; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter                  
                    
              // if(stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
                  //    {pKompjuter = 20; poeniKompjuter.setText(String.valueOf(pKompjuter));i = 0;kompjuterOdigrao = true;} 
@@ -790,7 +790,7 @@ if (index >= varijacije.length) {
        //              {pKompjuter = 20; poeniKompjuter.setText(String.valueOf(pKompjuter));i = 0;kompjuterOdigrao = true;} 
        
            if(a2.stanje51.getIcon().equals(a2.tacno.getIcon()) && a2.stanje52.getIcon().equals(a2.tacno.getIcon())&&a2.stanje53.getIcon().equals(a2.tacno.getIcon())&& a2.stanje54.getIcon().equals(a2.tacno.getIcon()))
-                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = 0; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter       
+                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = -1; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuter       
        
        
  //6 -- odradi 6 poteza ali mi izgenerise odma sledecu igru (otvori prozor)..
@@ -903,19 +903,20 @@ if (index >= varijacije.length) {
                    
                   }
               if(a2.stanje61.getIcon().equals(a2.tacno.getIcon()) && a2.stanje62.getIcon().equals(a2.tacno.getIcon())&&a2.stanje63.getIcon().equals(a2.tacno.getIcon())&& a2.stanje64.getIcon().equals(a2.tacno.getIcon()))
-                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = 0; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuterOdigrao = true; ?                  
+                     {a2.pKompjuter = 20; a2.poeniKompjuter.setText(String.valueOf(a2.pKompjuter));a2.i = -1; kompjuterOdigrao = true;a2.r.skockoPoeniKompjuter = a2.pKompjuter;}  //dodaj kompjuterOdigrao = true; ?                  
                    
                    
-                   kompjuterOdigrao = true;
-                      if(kompjuterOdigrao) //ovaj deo koda nije potreban
-       {      
+                  // kompjuterOdigrao = true;
+
+                      if(igraKompjuter/*kompjuterOdigrao*/) //ovaj deo koda nije potreban
+       {      dispose();
             //treba a2 dispose?
            //ovaj kod ne ide tu
-        //  a2.dispose(); //treba neki counter mozda prosledi u jebeni konstruktor pa posle dispose
+        //  a2.dispose(); //treba neki counter mozda prosledi u konstruktor pa posle dispose
         KOZNAZNA k1 = new KOZNAZNA(tezina,a2.r);//ovde se prosledjuje tezina, poeni igraca i poeni kompjutera, 
         //a u ovom slucaju i a2 skocko.. posle se terminiraju zajedno na kraju
         k1.show();
-        
+        //pomoc = 0;
         
        }    
                    /*long t= System.currentTimeMillis();
@@ -1615,7 +1616,7 @@ if (index >= varijacije.length) {
                  
                  pokusaj14.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
-                    {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek)); i = 0; r.asocijacijePoeniCovek = pCovek;}                  
+                    {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek)); i = 0; r.skockoPoeniCovek = pCovek;}                  
                  break;} //pogodio je, treba staviti varijablu da igra racunar, i dispose..
              case 5 -> {pokusaj21.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
              case 6 -> {pokusaj22.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1628,7 +1629,7 @@ if (index >= varijacije.length) {
                  
                  pokusaj24.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 9 -> {pokusaj31.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
              case 10 -> {pokusaj32.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1641,7 +1642,7 @@ if (index >= varijacije.length) {
                  
                  pokusaj34.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 13 -> {pokusaj41.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
              case 14 ->{pokusaj42.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1654,7 +1655,7 @@ if (index >= varijacije.length) {
                  
                  pokusaj44.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 17 -> {pokusaj51.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
              case 18 -> {pokusaj52.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1667,7 +1668,7 @@ if (index >= varijacije.length) {
                  
                  pokusaj54.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje51.getIcon().equals(tacno.getIcon()) && stanje52.getIcon().equals(tacno.getIcon())&&stanje53.getIcon().equals(tacno.getIcon())&& stanje54.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 21 -> {pokusaj61.setIcon(crveno.getIcon()); if(rez.get(0) == 5) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
              case 22 -> {pokusaj62.setIcon(crveno.getIcon()); if(rez.get(1) == 5) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1680,7 +1681,7 @@ if (index >= varijacije.length) {
                  
                  pokusaj64.setIcon(crveno.getIcon()); if(rez.get(3) == 5) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(5)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje61.getIcon().equals(tacno.getIcon()) && stanje62.getIcon().equals(tacno.getIcon())&&stanje63.getIcon().equals(tacno.getIcon())&& stanje64.getIcon().equals(tacno.getIcon()))
-                 {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                 {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              
              default -> {
@@ -1710,7 +1711,7 @@ switch (brojac) {
                  
                  pokusaj14.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 5 -> {pokusaj21.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
              case 6 -> {pokusaj22.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1723,7 +1724,7 @@ switch (brojac) {
                  
                  pokusaj24.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 9 -> {pokusaj31.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
              case 10 -> {pokusaj32.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1736,7 +1737,7 @@ switch (brojac) {
                  
                  pokusaj34.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 13 -> {pokusaj41.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
              case 14 ->{pokusaj42.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1749,7 +1750,7 @@ switch (brojac) {
                  
                  pokusaj44.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 17 -> {pokusaj51.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
              case 18 -> {pokusaj52.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1762,7 +1763,7 @@ switch (brojac) {
                  
                  pokusaj54.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje51.getIcon().equals(tacno.getIcon()) && stanje52.getIcon().equals(tacno.getIcon())&&stanje53.getIcon().equals(tacno.getIcon())&& stanje54.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 21 -> {pokusaj61.setIcon(narandzasto.getIcon()); if(rez.get(0) == 6) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
              case 22 -> {pokusaj62.setIcon(narandzasto.getIcon()); if(rez.get(1) == 6) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1775,7 +1776,7 @@ switch (brojac) {
                  
                  pokusaj64.setIcon(narandzasto.getIcon()); if(rez.get(3) == 6) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(6)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje61.getIcon().equals(tacno.getIcon()) && stanje62.getIcon().equals(tacno.getIcon())&&stanje63.getIcon().equals(tacno.getIcon())&& stanje64.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              
              default -> {
@@ -1797,7 +1798,7 @@ switch (brojac) {
                  stanje14.setVisible(true);                 
                  pokusaj14.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj14.getIcon().equals(sivo.getIcon())) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek)); i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek)); i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 5 -> {pokusaj21.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj21.getIcon().equals(sivo.getIcon())) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
              case 6 -> {pokusaj22.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj22.getIcon().equals(sivo.getIcon())) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1810,7 +1811,7 @@ switch (brojac) {
                  
                  pokusaj24.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj24.getIcon().equals(sivo.getIcon())) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 9 -> {pokusaj31.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj31.getIcon().equals(sivo.getIcon())) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
              case 10 -> {pokusaj32.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj32.getIcon().equals(sivo.getIcon())) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1823,7 +1824,7 @@ switch (brojac) {
                  
                  pokusaj34.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj34.getIcon().equals(sivo.getIcon())) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 13 -> {pokusaj41.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj41.getIcon().equals(sivo.getIcon())) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
              case 14 ->{pokusaj42.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj42.getIcon().equals(sivo.getIcon())) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1836,7 +1837,7 @@ switch (brojac) {
                  
                  pokusaj44.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj44.getIcon().equals(sivo.getIcon())) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 17 -> {pokusaj51.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj51.getIcon().equals(sivo.getIcon())) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
              case 18 -> {pokusaj52.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj52.getIcon().equals(sivo.getIcon())) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1849,7 +1850,7 @@ switch (brojac) {
                  
                  pokusaj54.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj54.getIcon().equals(sivo.getIcon())) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje51.getIcon().equals(tacno.getIcon()) && stanje52.getIcon().equals(tacno.getIcon())&&stanje53.getIcon().equals(tacno.getIcon())&& stanje54.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 21 -> {pokusaj61.setIcon(sivo.getIcon()); if(rez.get(0) == 1&& pokusaj61.getIcon().equals(sivo.getIcon())) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
              case 22 -> {pokusaj62.setIcon(sivo.getIcon()); if(rez.get(1) == 1&& pokusaj62.getIcon().equals(sivo.getIcon())) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1862,7 +1863,7 @@ switch (brojac) {
                  
                  pokusaj64.setIcon(sivo.getIcon()); if(rez.get(3) == 1&& pokusaj64.getIcon().equals(sivo.getIcon())) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(1)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje61.getIcon().equals(tacno.getIcon()) && stanje62.getIcon().equals(tacno.getIcon())&&stanje63.getIcon().equals(tacno.getIcon())&& stanje64.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              
              default -> {
@@ -1886,7 +1887,7 @@ switch (brojac) {
                  
                  pokusaj14.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj14.getIcon().equals(ljubicasto.getIcon())) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 5 -> {pokusaj21.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj21.getIcon().equals(ljubicasto.getIcon())) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
              case 6 -> {pokusaj22.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj22.getIcon().equals(ljubicasto.getIcon())) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1899,7 +1900,7 @@ switch (brojac) {
                  
                  pokusaj24.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj24.getIcon().equals(ljubicasto.getIcon())) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 9 -> {pokusaj31.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj31.getIcon().equals(ljubicasto.getIcon())) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
              case 10 -> {pokusaj32.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj32.getIcon().equals(ljubicasto.getIcon())) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1912,7 +1913,7 @@ switch (brojac) {
                  
                  pokusaj34.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj34.getIcon().equals(ljubicasto.getIcon())) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}
                  break;}
              case 13 -> {pokusaj41.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj41.getIcon().equals(ljubicasto.getIcon())) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
              case 14 ->{pokusaj42.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj42.getIcon().equals(ljubicasto.getIcon())) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1925,7 +1926,7 @@ switch (brojac) {
                  
                  pokusaj44.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj44.getIcon().equals(ljubicasto.getIcon())) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  
                  break;}
              case 17 -> {pokusaj51.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj51.getIcon().equals(ljubicasto.getIcon())) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1938,7 +1939,7 @@ switch (brojac) {
                  stanje54.setVisible(true);               
                  pokusaj54.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj54.getIcon().equals(ljubicasto.getIcon())) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje51.getIcon().equals(tacno.getIcon()) && stanje52.getIcon().equals(tacno.getIcon())&&stanje53.getIcon().equals(tacno.getIcon())&& stanje54.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 21 -> {pokusaj61.setIcon(ljubicasto.getIcon()); if(rez.get(0) == 2&& pokusaj61.getIcon().equals(ljubicasto.getIcon())) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
              case 22 -> {pokusaj62.setIcon(ljubicasto.getIcon()); if(rez.get(1) == 2&& pokusaj62.getIcon().equals(ljubicasto.getIcon())) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1951,7 +1952,7 @@ switch (brojac) {
                  
                  pokusaj64.setIcon(ljubicasto.getIcon()); if(rez.get(3) == 2&& pokusaj64.getIcon().equals(ljubicasto.getIcon())) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(2)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje61.getIcon().equals(tacno.getIcon()) && stanje62.getIcon().equals(tacno.getIcon())&&stanje63.getIcon().equals(tacno.getIcon())&& stanje64.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              
              default -> {
@@ -1976,7 +1977,7 @@ switch (brojac) {
                  
                  pokusaj14.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 5 -> {pokusaj21.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
              case 6 -> {pokusaj22.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje22.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje22.setIcon(nijeNaMestu.getIcon());} else{stanje22.setIcon(netacno.getIcon());} brojac++; break;}
@@ -1989,7 +1990,7 @@ switch (brojac) {
                  
                  pokusaj24.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 9 -> {pokusaj31.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
              case 10 -> {pokusaj32.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2002,7 +2003,7 @@ switch (brojac) {
                  
                  pokusaj34.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 13 -> {pokusaj41.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
              case 14 ->{pokusaj42.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2015,7 +2016,7 @@ switch (brojac) {
                  
                  pokusaj44.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 17 -> {pokusaj51.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
              case 18 -> {pokusaj52.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2028,7 +2029,7 @@ switch (brojac) {
                  
                  pokusaj54.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje51.getIcon().equals(tacno.getIcon()) && stanje52.getIcon().equals(tacno.getIcon())&&stanje53.getIcon().equals(tacno.getIcon())&& stanje54.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 21 -> {pokusaj61.setIcon(zeleno.getIcon()); if(rez.get(0) == 3) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
              case 22 -> {pokusaj62.setIcon(zeleno.getIcon()); if(rez.get(1) == 3) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2041,7 +2042,7 @@ switch (brojac) {
                  
                  pokusaj64.setIcon(zeleno.getIcon()); if(rez.get(3) == 3) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(3)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje61.getIcon().equals(tacno.getIcon()) && stanje62.getIcon().equals(tacno.getIcon())&&stanje63.getIcon().equals(tacno.getIcon())&& stanje64.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              
              default -> {
@@ -2064,7 +2065,7 @@ switch (brojac) {
                  
                  pokusaj14.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje14.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje14.setIcon(nijeNaMestu.getIcon());} else{stanje14.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje11.getIcon().equals(tacno.getIcon()) && stanje12.getIcon().equals(tacno.getIcon())&&stanje13.getIcon().equals(tacno.getIcon())&& stanje14.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  
                  break;}
              case 5 -> {pokusaj21.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje21.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje21.setIcon(nijeNaMestu.getIcon());} else{stanje21.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2078,7 +2079,7 @@ switch (brojac) {
                  
                  pokusaj24.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje24.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje24.setIcon(nijeNaMestu.getIcon());} else{stanje24.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje21.getIcon().equals(tacno.getIcon()) && stanje22.getIcon().equals(tacno.getIcon())&&stanje23.getIcon().equals(tacno.getIcon())&& stanje24.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 9 -> {pokusaj31.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje31.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje31.setIcon(nijeNaMestu.getIcon());} else{stanje31.setIcon(netacno.getIcon());} brojac++; break;}
              case 10 -> {pokusaj32.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje32.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje32.setIcon(nijeNaMestu.getIcon());} else{stanje32.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2091,7 +2092,7 @@ switch (brojac) {
                  
                  pokusaj34.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje34.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje34.setIcon(nijeNaMestu.getIcon());} else{stanje34.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje31.getIcon().equals(tacno.getIcon()) && stanje32.getIcon().equals(tacno.getIcon())&&stanje33.getIcon().equals(tacno.getIcon())&& stanje34.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}
                  break;}
              case 13 -> {pokusaj41.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje41.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje41.setIcon(nijeNaMestu.getIcon());} else{stanje41.setIcon(netacno.getIcon());} brojac++; break;}
              case 14 ->{pokusaj42.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje42.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje42.setIcon(nijeNaMestu.getIcon());} else{stanje42.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2104,7 +2105,7 @@ switch (brojac) {
                  
                  pokusaj44.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje44.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje44.setIcon(nijeNaMestu.getIcon());} else{stanje44.setIcon(netacno.getIcon());} brojac++; 
                   if(igraCovek && stanje41.getIcon().equals(tacno.getIcon()) && stanje42.getIcon().equals(tacno.getIcon())&&stanje43.getIcon().equals(tacno.getIcon())&& stanje44.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              case 17 -> {pokusaj51.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje51.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje51.setIcon(nijeNaMestu.getIcon());} else{stanje51.setIcon(netacno.getIcon());} brojac++; break;}
              case 18 -> {pokusaj52.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje52.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje52.setIcon(nijeNaMestu.getIcon());} else{stanje52.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2117,7 +2118,7 @@ switch (brojac) {
                  
                  pokusaj54.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje54.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje54.setIcon(nijeNaMestu.getIcon());} else{stanje54.setIcon(netacno.getIcon());} brojac++; 
                  if(igraCovek && stanje51.getIcon().equals(tacno.getIcon()) && stanje52.getIcon().equals(tacno.getIcon())&&stanje53.getIcon().equals(tacno.getIcon())&& stanje54.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                 
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                 
                  break;}
              case 21 -> {pokusaj61.setIcon(plavo.getIcon()); if(rez.get(0) == 4) {stanje61.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje61.setIcon(nijeNaMestu.getIcon());} else{stanje61.setIcon(netacno.getIcon());} brojac++; break;}
              case 22 -> {pokusaj62.setIcon(plavo.getIcon()); if(rez.get(1) == 4) {stanje62.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje62.setIcon(nijeNaMestu.getIcon());} else{stanje62.setIcon(netacno.getIcon());} brojac++; break;}
@@ -2130,7 +2131,7 @@ switch (brojac) {
                  
                  pokusaj64.setIcon(plavo.getIcon()); if(rez.get(3) == 4) {stanje64.setIcon(tacno.getIcon());} else if (rez.contains(4)){stanje64.setIcon(nijeNaMestu.getIcon());} else{stanje64.setIcon(netacno.getIcon());} brojac++;
                   if(igraCovek && stanje61.getIcon().equals(tacno.getIcon()) && stanje62.getIcon().equals(tacno.getIcon())&&stanje63.getIcon().equals(tacno.getIcon())&& stanje64.getIcon().equals(tacno.getIcon()))
-                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.asocijacijePoeniCovek = pCovek;}                
+                     {pCovek = 20; poeniCovek.setText(String.valueOf(pCovek));i = 0;r.skockoPoeniCovek = pCovek;}                
                  break;}
              
              default -> {
